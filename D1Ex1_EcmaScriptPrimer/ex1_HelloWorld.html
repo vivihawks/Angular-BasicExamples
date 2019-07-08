@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ES6 - Ex1 | Hello World!</title>
+ <script>
+//IIFE - Immediately Invoked Function Expression
+//()();
+ (function() {
+/////////////
+	  class HelloES6{
+ 
+		  constructor() {
+		    // This is the constructor.
+				this.greeting= "Hello";
+		    this.count = 1;
+				
+		  }
+		
+		  greet() {
+				
+		    // This is a method.
+		    //Notice back ticks and template
+				//this.greeting += this.count + "World....";
+				this.greeting = `${this.greeting} ${this.count} World!! I may have  as many number
+			of lines
+			as I
+			want to 
+			have!!`
+		    alert(this.greeting)
+		    
+		  }
+			greet1(){
+				alert(this.greeting)
+				alert("Greet 1")
+			}
+		}
+	  var test = new HelloES6();
+		test.greet();
+		test.greet1();
+/////////////
+	})();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
+

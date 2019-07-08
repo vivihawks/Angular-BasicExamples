@@ -1,0 +1,15 @@
+<h1>
+  {{title}}
+</h1>
+ <div flex layout-fill layout>
+      <ul>
+        <h3>Items</h3>
+        <p style="color:blue">Character count: <strong>{{characterCount}}</strong></p><br>
+        <li *ngFor="let item of items">
+          <div >
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>

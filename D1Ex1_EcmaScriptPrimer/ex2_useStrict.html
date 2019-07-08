@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ES6 - Ex2 | this Usage</title>
+  <script>
+
+  (function() {
+	  //Toggle the below to see the behavior
+	  //'use strict';
+		//Features at the beginning of a Script / a function
+		//1. Variable usage without declaration
+		//2. Future Proofed Keywords - public, private, protected, interface, implements
+		//3. You cannot delete functions
+		//4. Duplicately named parameters
+		//5. this Usage
+		
+var x1;
+x = 555;
+
+
+	  var myObject = {
+	    foo: 'bar',
+	    someMethod: function() {
+				console.log("Test Print")
+	      console.log(this);
+	    }
+	  };
+
+
+	  function someMethod2() {
+	   //delete myObject;
+		  console.log("********************************");
+			console.log(this);
+			console.log("********************************");
+	  }
+//delete  someMethod2;
+	  myObject.someMethod();//success
+	  someMethod2();//undefined //window
+	  var test2 = myObject.someMethod;
+	  test2();//undefined
+	  
+		var test = myObject.someMethod.bind(myObject);
+	  test();//success
+
+	})();
+  </script>
+</head>
+<body>
+
+</body>
+</html>

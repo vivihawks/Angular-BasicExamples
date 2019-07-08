@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>ES6 - Ex6 | Spread and Rest Operators</title>
+<script>
+	(function() {
+		//Spread Usage
+		const add = (a, b) => a + b;
+		let args = [ 3, 5 ];
+		add(...args); // same as `add(args[0], args[1])`, or `add.apply(null, args)	  
+		let cde = [ 'c', 'd', 'e' ];
+		let scale = [ 'a', 'b', ...cde, 'f', 'g' ]; 
+		//let scale = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+		let mapABC = {
+			a : 5,
+			b : 6,
+			c : 3
+		};
+		function abc(map){
+			let xyz ={...map, x:100}
+
+			//let xyz ={a:5,b:6,c:3, x:100}
+		}
+		abc(mapABC);
+
+		//Rest Usage
+		function addSimple(a, b) {
+			return a + b;
+		}
+
+		function addRest(...numbers) {
+
+			return numbers[0] + numbers[1]+numbers[2];
+		
+		}
+
+		addSimple(3, 2); // 5
+		addRest(1, 2, 3,4); // 6
+		addRest(1, 2); // 6
+		addRest(1); // 6
+		addRest(); // 6
+
+		// or in es6 style:
+		const addEs6 =  (...numbers) => numbers.reduce((p, c) => p + c, 0);
+
+
+		//const addEs6 = function(...numbers){
+		//	return numbers.reduce((p, c) => p + c, 0);
+		//}
+
+		addEs6(1, 2, 3); // 6
+		addEs6(1); 
+		addEs6(1, 2); // 6
+
+	})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<title>{{title}}</title>
+
+    <div class="rendered" flex layout="column">
+      <p><strong>Date:</strong> {{today | date }}</p>
+      <p><strong>Capitalization:</strong> {{name | uppercase}}</p>
+      <p><strong>Currency:</strong> {{randomNumber | currency:'INR':false}}</p>
+      <p><strong>Percent:</strong> {{randomNumber | percent}}</p>
+      <p><strong>Decimal:</strong> {{randomNumber | number:'2.0-1'}}</p>
+      <pre>{{items | slice:1:3 | json}}</pre>
+      <br/>
+      <h3>Custom Pipe - Reverse</h3>
+      <div class="md-headline"><strong>Forward</strong>: {{forwardString}}</div>
+      <div class="md-headline"><strong>Backward</strong>: {{forwardString | reverse:1:2:'a'}}</div>
+    </div>
