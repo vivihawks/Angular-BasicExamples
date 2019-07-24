@@ -18,6 +18,12 @@ export class MyComponent implements OnInit, OnChanges, AfterContentInit, AfterCo
 
 //constructor
 
+/*
+1. onChanges - I/O values are being initialized 
+2. onInit - Component is ready
+3. onChanges - anytime i/o changes
+*/
+
   ngOnChanges() {
     this.hooks.push('ngOnChanges');
   }

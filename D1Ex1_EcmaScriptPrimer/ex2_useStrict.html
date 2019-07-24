@@ -8,7 +8,7 @@
 
   (function() {
 	  //Toggle the below to see the behavior
-	  //'use strict';
+	  'use strict';
 		//Features at the beginning of a Script / a function
 		//1. Variable usage without declaration
 		//2. Future Proofed Keywords - public, private, protected, interface, implements
@@ -29,13 +29,13 @@ x = 555;
 	  };
 
 
-	  function someMethod2() {
+	  function someMethod2(x,x) {
 	   //delete myObject;
 		  console.log("********************************");
 			console.log(this);
 			console.log("********************************");
 	  }
-//delete  someMethod2;
+delete  someMethod2;
 	  myObject.someMethod();//success
 	  someMethod2();//undefined //window
 	  var test2 = myObject.someMethod;
