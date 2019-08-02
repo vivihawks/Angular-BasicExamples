@@ -20,6 +20,11 @@ export class ColorValueComponent implements OnInit {
      ngOnInit() {
          this.sendColor(this.initialValue);
      }
+     ngOnChanges(){
+         console.log("Input changed")
+     }
+
+     //Constructor >> onChanges >> onInit >> onChanges Recursive
 
     private sendColor(color: string): void {
         this.colorValueEvent.emit(color);

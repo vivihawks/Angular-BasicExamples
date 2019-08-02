@@ -46,12 +46,12 @@ import { NgZone,Component } from '@angular/core';
 
 export class BindingComponent {
   interpolatedValue : string = 'This is my Awesome Interpolated Value';
-  componentStyle: string = 'green';
+  componentStyle: string = 'red';
   dynamicValue: string = 'Winning!';
 
   alertTheWorld(): void {
     this.dynamicValue = "Losing! Boo!!!"
-//    this.componentStyle = 'green';
+   this.componentStyle = 'green';
     alert('I clicked the button!');
   }
 }

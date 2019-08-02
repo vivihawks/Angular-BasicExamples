@@ -9,8 +9,8 @@ function xyz(label: string, count: number) {
 }
 
 class Test {
+  // invokes Override, which returns the decorator
   @xyz('test', 142)  
-      // invokes Override, which returns the decorator
   name: string = 'pat';
 
   @xyz('',12)

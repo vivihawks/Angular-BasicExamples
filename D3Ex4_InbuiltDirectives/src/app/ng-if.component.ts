@@ -23,7 +23,9 @@ import { Component } from '@angular/core';
 <div *ngIf="show">
 This is the output of a simple if
 </div>	
-		
+<div *ngIf="!show">
+This is another output of a simple if 
+</div>	
 		`
 })
 export class NgIfComponent {

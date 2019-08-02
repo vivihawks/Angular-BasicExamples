@@ -24,7 +24,7 @@ import { Router } from '@angular/router';
     <div style="color: green; margin-top: 1rem;">Outlet:</div>
     <div style="border: 2px solid red; padding: 1rem;">
       <router-outlet></router-outlet>
-      <---<<< 
+      <---<<< Component output goes here
     </div>
   `
 })

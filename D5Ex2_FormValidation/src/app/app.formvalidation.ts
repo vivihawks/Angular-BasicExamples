@@ -9,13 +9,13 @@ import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
     <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
 
 
-      <div class="form-group" [ngClass]="{'has-error':complexForm.controls['firstName'].invalid && complexForm.controls['firstName'].touched}">
+      <div class="form-group" [ngClass]=" {'has-error':complexForm.controls['firstName'].invalid && complexForm.controls['firstName'].touched}">
 
         <label>First Name:</label>
         <input class="form-control" type="text" placeholder="John" [formControl]="complexForm.controls['firstName']" >
         <div *ngIf="complexForm.controls['firstName'].hasError('required')  && complexForm.controls['firstName'].touched" class="alert alert-danger">You must include a first name.</div>
         <div *ngIf="complexForm.controls['firstName'].hasError('exclamation')  && complexForm.controls['firstName'].touched" class="alert alert-danger">Your first name cannot contain an "!" in it.</div>
-        <!-- Dirty, Touched, Pristine, Valid / Invalid-->
+        <!-- Dirty, Touched, Untouched, Pristine, Valid, Invalid-->
 
       </div>
     
@@ -64,7 +64,7 @@ import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class FormValidationComponent {
   complexForm : FormGroup;
-
+  formSubmitted:boolean;
   constructor(fb: FormBuilder){
     this.complexForm = fb.group({
       'firstName' : [null, [Validators.required,this.hasPunctuation("!","exclamation")]],
@@ -88,6 +88,7 @@ export class FormValidationComponent {
   };
 }
   submitForm(value: any){
+    this.formSubmitted = true;
     console.log(value);
   }
 }
