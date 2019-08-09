@@ -15,7 +15,7 @@ import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
         <input class="form-control" type="text" placeholder="John" [formControl]="complexForm.controls['firstName']" >
         <div *ngIf="complexForm.controls['firstName'].hasError('required')  && complexForm.controls['firstName'].touched" class="alert alert-danger">You must include a first name.</div>
         <div *ngIf="complexForm.controls['firstName'].hasError('exclamation')  && complexForm.controls['firstName'].touched" class="alert alert-danger">Your first name cannot contain an "!" in it.</div>
-        <!-- Dirty, Touched, Untouched, Pristine, Valid, Invalid-->
+        <!-- Dirty, Pristine, Touched, Untouched, Valid, Invalid-->
 
       </div>
     

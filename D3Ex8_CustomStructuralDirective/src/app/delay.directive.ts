@@ -7,6 +7,9 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
   //<div *appDelay="1000">  
   // -- Content --- 
   //</div>
+  //<span *appDelay="1000">  
+  // -- Content --- 
+  //</span>
 //</body>
 export class DelayDirective {
   constructor(
@@ -20,9 +23,11 @@ export class DelayDirective {
   set appDelay(time: number){
     setTimeout(
       () => {
-          this.viewContainerRef.createEmbeddedView(this.templateRef);
-          this.viewContainerRef.createEmbeddedView(this.templateRef);
-      },
+        this.viewContainerRef.createEmbeddedView(this.templateRef);
+        this.viewContainerRef.createEmbeddedView(this.templateRef);
+        this.viewContainerRef.createEmbeddedView(this.templateRef);
+        this.viewContainerRef.createEmbeddedView(this.templateRef);
+  },
       time
     );
   }

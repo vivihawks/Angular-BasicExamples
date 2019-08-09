@@ -17,6 +17,9 @@ export class MyService {
       .map(res => res.json())
       .catch(this.handleError)
       .toPromise();
+	  
+	  //Observable > Subscribe(progress, error, complete)
+	  //Promise > then(success, failure).then(success, failure).then(success,failure)
   }
   
   private handleError(error: Response){

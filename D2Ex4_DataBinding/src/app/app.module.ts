@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BindingComponent } from './binding.component';
 import { AppComponent } from './app.component';
+import {FeatureModule1Module} from './feature-module1/feature-module1.module';
+import {FeatureModule2Module} from './feature-module2/feature-module2.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+	FeatureModule1Module,
+	FeatureModule2Module //This import is only good for components in this module
   ],
   providers: [],
   bootstrap: [AppComponent]
