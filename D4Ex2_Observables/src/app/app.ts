@@ -119,7 +119,7 @@ export class App implements OnInit{
     
        let subscription2 = this.data.subscribe(
           //function(value){this.values.push(value)},
-          value => this.values.push(333)
+          value => this.values.unshift(333)
       );
     
   }
@@ -171,7 +171,7 @@ export class App implements OnInit{
     .subscribe(
       coordinate => {
         this.coordinates.unshift(coordinate);
-        //this.detectorRef.detectChanges();
+        this.detectorRef.detectChanges();
       },
       err => console.log('Error:', err),
       () => console.log('Completed')

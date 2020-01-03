@@ -29,6 +29,9 @@ export class ComplexFormComponent {
     console.log(value);
     console.log(this.complexForm.value);
   }
+  log(){
+    console.log("-------------")
+  }
 }
 
 //<address>
