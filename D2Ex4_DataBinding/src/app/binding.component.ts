@@ -53,6 +53,12 @@ export class BindingComponent {
   
   constructor(){
     setTimeout( _=> this.componentStyle = "green",1000);
+    /*setTimeout( 
+      function(){
+        this.componentStyle = "green"
+      },
+      1000
+    );*/
     setTimeout(_=> this.componentStyle = "blue",3000);
     
   }

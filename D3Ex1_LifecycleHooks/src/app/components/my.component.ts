@@ -4,7 +4,7 @@ import { Component, Input, OnInit, OnChanges, AfterContentInit, AfterContentChec
 @Component({
   selector: 'my-component',
   template: `
-  <ng-content></ng-content>
+  <ng-content> </ng-content>
     <h3 layout-margin><small>Counter:</small> {{counter}}</h3>
     <h1>Lifecyle hook log:</h1>
     <h3 *ngFor="let hook of hooks">{{hook}}</h3>

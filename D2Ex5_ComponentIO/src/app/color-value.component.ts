@@ -9,7 +9,7 @@ import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
                    type="number" min="0" max="255" step="10" 
                    value="{{initialValue}}" 
                    (input)="sendColor(color.value)"/>
-        </p>`,
+        </p>`
 })
 
 export class ColorValueComponent implements OnInit {

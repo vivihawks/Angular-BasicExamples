@@ -26,7 +26,6 @@ export class DelayDirective {
         this.viewContainerRef.createEmbeddedView(this.templateRef);
         this.viewContainerRef.createEmbeddedView(this.templateRef);
         this.viewContainerRef.createEmbeddedView(this.templateRef);
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
   },
       time
     );
