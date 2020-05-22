@@ -1,3 +1,4 @@
+import { sanitizeStyle } from "@angular/core/src/sanitization/sanitization";
 
 export class RedGreenBlue {
 
@@ -5,7 +6,10 @@ export class RedGreenBlue {
     public green: number = 0;
     public blue: number = 0;
 
-//rgb(1,10,100);
+
+   // public style: string;
+
+    //rgb(1,10,100);
     public get style(): string {
         return 'rgb(' +
             this.red + ',' +
@@ -13,3 +17,5 @@ export class RedGreenBlue {
             this.blue + ')';
     }
 }
+
+//rgb.style

@@ -24,7 +24,7 @@ you able to apply only one class (of course you can use class. a few times but i
             Classes: {{part1.className}} 
         </p>
         
-        <button (click)="big=!big">Big {{big ? 'off' : 'on'}} >>>---->>> {{big}}</button>
+        <button (click)="big=!big">Big {{big }} >>>---->>> {{big}}</button>
         <button (click)="back=!back">Background {{back ? 'off' : 'on'}}</button>
         <button (click)="bord=!bord">Border {{bord ? 'off' : 'on'}}</button>
         

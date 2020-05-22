@@ -1,16 +1,21 @@
 
 function xyz(label: string, count: number) {
   return function (target: any, key: string) {
+
+
     Object.defineProperty(target, key, { 
       configurable: false,
       get: () => label
     });
+
+
+
   }
 }
 
 class Test {
   // invokes Override, which returns the decorator
-  @xyz('test', 142)  
+  @xyz('test', 142) 
   name: string = 'pat';
 
   @xyz('',12)
