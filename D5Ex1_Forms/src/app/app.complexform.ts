@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, AfterViewChecked } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'complex-form',
   templateUrl : './app.complexform.html'
 })
-export class ComplexFormComponent {
+export class ComplexFormComponent implements AfterViewChecked{
   complexForm : FormGroup;
 
   constructor(fb: FormBuilder){
@@ -32,6 +32,10 @@ export class ComplexFormComponent {
   log(){
     console.log("-------------")
   }
+  ngAfterViewChecked(){
+    console.log(this.complexForm.value);
+  }
+
 }
 
 //<address>

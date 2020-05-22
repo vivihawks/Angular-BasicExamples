@@ -88,7 +88,13 @@ export class App implements OnInit{
     //Observables start separately as copies for each subscriber.
     //Example 1 : Basic Observable - This is a COLD Observable
      this.data = new Observable<number>((observer:any) => {
-          setTimeout(() => {
+
+      //1. Server call - Authorize user
+      //2. Server call - get roles
+      //3. Server call - reconcile roles / groups
+      //4. Get accessible resources for the current authorization
+        setTimeout(
+          () => {
               observer.next(42);
           }, 1000);
 
@@ -111,7 +117,7 @@ export class App implements OnInit{
       });
 
       let subscription = this.data.subscribe(
-          //function(abc){this.values.push(abc)},
+         // function(abc) { this.values.push(abc) },
          value => this.values.push(value),
           error => this.anyErrors = true,
           () => this.finished = true

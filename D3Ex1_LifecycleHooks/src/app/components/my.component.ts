@@ -17,11 +17,11 @@ export class MyComponent implements OnInit, OnChanges, AfterContentInit, AfterCo
   hooks: Array<string> = [];
 
 //constructor
-
 /*
 1. onChanges - I/O values are being initialized 
 2. onInit - Component is ready
 3. onChanges - anytime i/o changes
+4. onDestroy - Component is about to be killed
 */
 
   ngOnChanges() {

@@ -16,6 +16,10 @@ export class AppComponent {
     { name: 'Last One', description: 'A round of applause for this one' }
   ];
 
+  ngOnInit(){
+    alert(this.items)
+  }
+
 }
 
 interface Item { name: string; description: string; }

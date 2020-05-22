@@ -7,7 +7,7 @@ import 'rxjs/add/operator/concat';
 @Component({
   selector: 'app-root',
   template: `
-    <p>Total price of product is {{fetchPrice|async  | currency:"CAD":true:"1.2-2"}}</p>
+    <p>Total price of product is {{fetchPrice | async | currency:"CAD":true:"1.2-2"}}</p>
     <p>Seconds: {{seconds|async}} </p>
     <br><br><br>
    <div>
@@ -20,7 +20,9 @@ export class AppComponent {
   fetchPrice = new Promise((resolve, reject) => {
     let price =100;
     setInterval(() => resolve(price++), 1000);
-  });
+  })
+  //The below line or the async pipe, to read data from fetchPrice
+  //.then((data)=> this.fetchPrice = data );
 
   seconds = Observable.of("a").concat(Observable.interval(100));
 //seconds.subscribe(progress,error, success);
