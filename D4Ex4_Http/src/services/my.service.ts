@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/Rx'
-const HEADER = { headers: new HttpHeaders({ 'Authentication': 'AFDSSASDF123512' }) };
+const HEADER = { headers: new Headers({ 'Authentication': 'AFDSSASDF123512' }) };
 
 export interface Item {
   name: string; description: string;
@@ -10,11 +10,11 @@ export interface Item {
 
 @Injectable()
 export class MyService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: Http) {}
 
-  getItems() :Promise<any>{
-    return this.http.get('http://localhost:4200/data/items.json', HEADER)
-      //.map(res => res)
+  getItems() {
+    return this.http.get('http://localhost:3000/items', HEADER)
+      .map(res => res.json())
       .catch(this.handleError)
       .toPromise();
 	  
@@ -24,6 +24,6 @@ export class MyService {
   
   private handleError(error: Response){
     console.error(error);
-    return Observable.throw(error|| ' Server Error ');
+    return Observable.throw(error.json()|| ' Server Error ');
   }
 }

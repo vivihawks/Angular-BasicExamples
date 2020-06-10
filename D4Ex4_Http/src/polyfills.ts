@@ -41,8 +41,13 @@
 
 
 /** Evergreen browsers require these. **/
+<<<<<<< HEAD
 //import 'core-js/es6/reflect';
 import 'core-js/es/reflect';
+=======
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
 
 
 /** ALL Firefox browsers require the following to support `@angular/animation`. **/

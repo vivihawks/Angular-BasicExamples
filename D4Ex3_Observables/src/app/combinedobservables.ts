@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import {combineLatest as observableCombineLatest, of as observableOf,  AsyncSubject ,  ReplaySubject ,  BehaviorSubject ,  Subject ,  Observable } from 'rxjs';
 
@@ -6,6 +7,15 @@ import { Component, ElementRef, ChangeDetectorRef, OnInit, ViewEncapsulation } f
 import * as Rx from 'rxjs';
 import { timer,pipe} from "rxjs";
 
+=======
+import { AsyncSubject } from "rxjs/AsyncSubject";
+import { ReplaySubject } from "rxjs/ReplaySubject";
+import { BehaviorSubject } from "rxjs/BehaviorSubject";
+import { Subject } from "rxjs/Subject";
+import { Component, ElementRef, ChangeDetectorRef, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable } from "rxjs/Observable";
+import * as Rx from 'rxjs/Rx';
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
 
 @Component({
   selector: 'obs-combined',
@@ -63,11 +73,19 @@ export class ObsCombined {
       { id: 4, name: 'BackAnd' }
     ];
 
+<<<<<<< HEAD
     const events$ = observableOf(events);
     const users$ = observableOf(users);
     const sponsors$ = observableOf(sponsors);
 
     const conference$ = observableCombineLatest(
+=======
+    const events$ = Observable.of(events);
+    const users$ = Observable.of(users);
+    const sponsors$ = Observable.of(sponsors);
+
+    const conference$ = Observable.combineLatest(
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
       events$,
       users$,
       sponsors$,
@@ -119,6 +137,7 @@ export class ObsCombined {
     //all(every observable result must pass a condition)
 
     //timerOne emits first value at 1s, then once every 4s
+<<<<<<< HEAD
     const timerOne = timer(1000, 4000);
     //timerTwo emits first value at 2s, then once every 4s
     const timerTwo = timer(2000, 4000)
@@ -126,15 +145,34 @@ export class ObsCombined {
     const timerThree = timer(3000, 4000)
 
     //when one timer emits, emit the latest values from each timer as an array
+=======
+    const timerOne = Rx.Observable.timer(1000, 4000);
+    //timerTwo emits first value at 2s, then once every 4s
+    const timerTwo = Rx.Observable.timer(2000, 4000)
+    //timerThree emits first value at 3s, then once every 4s
+    const timerThree = Rx.Observable.timer(3000, 4000)
+
+    //when one timer emits, emit the latest values from each timer as an array
+    const combined = Rx.Observable
+      .combineLatest(
+        timerOne,
+        timerTwo,
+        timerThree,
+      );
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
 
     //Timer 1 - 1 1 1 2 2 2
     //Timer 2 - 0 1 1 1 2 2 
     //Timer 3 - 0 0 1 1 1 2
 
+<<<<<<< HEAD
     const subs = observableCombineLatest(
         timerOne,
         timerTwo,
         timerThree      ).subscribe(latestValues => {
+=======
+    const subscribe = combined.subscribe(latestValues => {
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
       //grab latest emitted values for timers one, two, and three
       const [timerValOne, timerValTwo, timerValThree] = latestValues;
       /*
@@ -150,7 +188,11 @@ export class ObsCombined {
       );
     });
 
+<<<<<<< HEAD
     setTimeout(() => subs.unsubscribe(), 20000)
+=======
+    setTimeout(() => subscribe.unsubscribe(), 20000)
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
   }
 
   ngOnInit() {
@@ -178,7 +220,11 @@ export class ObsCombined {
       //Uncomment the below for a Hot Subscription
       //Hot observables are like singletons. They are not copied for each subscriber. 
       //There is only one stream that is shared by multiple subcribers
+<<<<<<< HEAD
       .pipe(share())
+=======
+      .share()
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
     let subscription = observable.subscribe(
       (val) => { this.items.push(val) },
       (err) => { this.items.push("Ah! snap!! something blew up "); this.items.push(err) },

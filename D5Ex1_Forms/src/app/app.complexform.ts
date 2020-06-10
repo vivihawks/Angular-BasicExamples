@@ -33,7 +33,11 @@ export class ComplexFormComponent implements AfterViewChecked{
     console.log("-------------")
   }
   ngAfterViewChecked(){
+<<<<<<< HEAD
     console.log(`View Checked: ${JSON.stringify(this.complexForm.value)}`);
+=======
+    console.log(this.complexForm.value);
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
   }
 
 }

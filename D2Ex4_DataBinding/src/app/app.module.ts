@@ -15,7 +15,11 @@ import {FeatureModule2Module} from './feature-module2/feature-module2.module';
   imports: [
     BrowserModule,
     FormsModule,
+<<<<<<< HEAD
     HttpClientModule,
+=======
+    HttpModule,
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f
 	FeatureModule1Module,
 	FeatureModule2Module //This import is only good for components in this module
   ],

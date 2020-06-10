@@ -1,3 +1,4 @@
+<<<<<<< HEAD:D4Ex3_Observables/src/app/app.ts
 
 import {fromEvent as observableFromEvent,  Observable } from 'rxjs';
 
@@ -7,6 +8,13 @@ import * as Rx from 'rxjs';
 
 import { from, of } from "rxjs";
 import { map, catchError,delay, timeout } from 'rxjs/operators';
+=======
+import { Component , ElementRef, ChangeDetectorRef, OnInit, ViewEncapsulation} from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import * as Rx from 'rxjs/Rx';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/observable/fromEvent';
+>>>>>>> a37972891427254680a219373cdec07372fe2c9f:D4Ex2_Observables/src/app/app.ts
 
 
 @Component({

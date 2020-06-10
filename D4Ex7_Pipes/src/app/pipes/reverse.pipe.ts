@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { text } from '@angular/core/src/render3';
 
 @Pipe({name: 'reverse'})
 export class ReversePipe implements PipeTransform {
