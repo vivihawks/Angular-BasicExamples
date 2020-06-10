@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <h2>Data Driven (Reactive) Form</h2>
-    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)" (change)="log()">
       <div class="form-group">
         <label>First Name:</label>
         <input class="form-control" type="text" placeholder="John" [formControl]="complexForm.controls['firstName']">

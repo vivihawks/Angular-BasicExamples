@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
     <nav>
       <a [routerLink]="['/component-one']">Component One</a>
       <a [routerLink]="['/component-two']">Component Two</a>
-      <a [routerLink]="[{ outlets: { 'sidebar': ['component-aux'],'sidebar2': ['component-aux2'] } }]">Component Aux</a>
-      <a [routerLink]="[{ outlets: {  'sidebar2': ['component-aux2'] } }]">Component Aux2</a>
+      <a [routerLink]="[{ outlets: { 'primary': ['component-one'],'sidebar2': ['component-aux2'] } }]">Component Aux</a>
+      <a [routerLink]="[{ outlets: {  'sidebar': ['component-aux'] } }]">Component Aux2</a>
     </nav>
     <div style="color: green; margin-top: 1rem;">Outlet:</div>
     <div style="border: 2px solid green; padding: 1rem;">

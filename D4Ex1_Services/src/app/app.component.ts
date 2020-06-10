@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
   providers: [MyService, CharacterService]
 })
 export class AppComponent {
-  title = 'Angular 7 Services!';
+  title = 'Angular Services!';
   items: Array<Item> = [];
   characterCount = 0;
   constructor(private service: MyService) {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import {Http, Response, Request, RequestMethod} from '@angular/http';
+import {HttpClient, HttpResponse, HttpRequest} from '@angular/common/http';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class LoginComponent {
   authenticated: boolean
   profile : Object;
 
-  constructor(fb: FormBuilder, public http: Http){
+  constructor(fb: FormBuilder, public http: HttpClient){
     if(localStorage.getItem('jwt')){
       this.authenticated = true;
       this.profile = JSON.parse(localStorage.getItem('profile'));

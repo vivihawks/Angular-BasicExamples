@@ -2,6 +2,7 @@ import { NgZone,Component } from '@angular/core';
 @Component({
   selector: 'binding-component',
   template: `
+  <h1>Data Binding in Action</h1>
     <div>
       <h2>Interpolation</h2>
       {{interpolatedValue}}
@@ -45,13 +46,26 @@ import { NgZone,Component } from '@angular/core';
 })
 
 export class BindingComponent {
+  
   interpolatedValue : string = 'This is my Awesome Interpolated Value';
-  componentStyle: string = 'green';
+  componentStyle: string = 'red';
   dynamicValue: string = 'Winning!';
-
+  
+  constructor(){
+    setTimeout( _=> this.componentStyle = "green",1000);
+    /*setTimeout( 
+      function(){
+        this.componentStyle = "green"
+      },
+      1000
+    );*/
+    setTimeout(_=> this.componentStyle = "blue",3000);
+    
+  }
   alertTheWorld(): void {
+  
     this.dynamicValue = "Losing! Boo!!!"
-//    this.componentStyle = 'green';
+   this.componentStyle = 'green';
     alert('I clicked the button!');
   }
 }

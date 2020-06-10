@@ -2,6 +2,7 @@ import { CharacterService } from './character.service';
 import { Item } from './items';
 import { Injectable } from '@angular/core';
 @Injectable()
+//@Injectable({providedIn : 'root'})
 export class MyService {
   private items: Array<Item> = [
     { name: 'Item 1', description: 'Epic item!' },
