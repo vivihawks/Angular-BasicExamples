@@ -5,7 +5,8 @@ import ComponentTwo from './component-two';
 export const routes: Routes = [
   { path: 'component-a', component: ComponentOne },
   { path: 'component-b/:id', component: ComponentTwo },
-  { path: '', redirectTo: 'component-a', pathMatch: 'full' }
+  { path: '', redirectTo: 'component-a', pathMatch: 'full' },
+  { path: '**', redirectTo: 'component-a', pathMatch: 'full' }
 ];
 
 //http://localhost:port/app/component-b/123

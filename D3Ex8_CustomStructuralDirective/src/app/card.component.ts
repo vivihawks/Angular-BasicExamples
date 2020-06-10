@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
       font-size: 2rem;
       font-family: 'Helvetica', sans-serif;
       font-weight: 300;
-      background: teal;
+      color:white;
+      background: purple;
       margin: 1rem;
       display: inline-block;
     }

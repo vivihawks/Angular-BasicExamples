@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 7 | Form Validations';
+  title = 'Angular 9 | Form Validations';
 }

@@ -6,11 +6,14 @@ import { Component } from '@angular/core';
       <binding-component>
         
       </binding-component>
+	  <hr/>
+	  <app-feature-component1>
+	  </app-feature-component1>
     </div>
   `
   })
 export class AppComponent {
-  title = 'Angular 7. Data Binding';
+  title = 'Angular Data Binding';
       constructor() {
   }
 }

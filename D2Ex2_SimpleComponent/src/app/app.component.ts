@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 7. Simple Component ';
+  title = 'A simple Angular Component ';
    constructor() {
     setTimeout(this.greet, 500);
   }
