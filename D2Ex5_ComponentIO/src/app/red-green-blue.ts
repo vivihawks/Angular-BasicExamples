@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import { sanitizeStyle } from "@angular/core/src/sanitization/sanitization";
-
->>>>>>> a37972891427254680a219373cdec07372fe2c9f
 export class RedGreenBlue {
 
     public red: number = 0;
