@@ -5,7 +5,7 @@
   selector: 'app-root',
   template: `
     <div *ngFor="let item of [1,2,3,4,5,6]">
-      <app-card *appDelay="1000 * item"><!--Container-->
+      <app-card *appDelay="1000*item"><!--Container-->
         {{item}}<!--Template-->
       </app-card>
     </div>

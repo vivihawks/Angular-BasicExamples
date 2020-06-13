@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { Http, Headers } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/Rx'
-const HEADER = { headers: new Headers({ 'Authentication': 'AFDSSASDF123512' }) };
+const HEADER = { headers: new HttpHeaders({ 'Authentication': 'AFDSSASDF123512' }) };
 
 export interface Item {
   name: string; description: string;
@@ -10,11 +10,10 @@ export interface Item {
 
 @Injectable()
 export class MyService {
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   getItems() {
-    return this.http.get('http://localhost:3000/items', HEADER)
-      .map(res => res.json())
+    return this.http.get('http://localhost:4200/data/items.json', HEADER)
       .catch(this.handleError)
       .toPromise();
 	  

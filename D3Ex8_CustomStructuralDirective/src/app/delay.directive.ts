@@ -18,14 +18,14 @@ export class DelayDirective {
   ) { }
   //@Input() abc: number;  
 
- // @Input() appDelay: number;
+// @Input() appDelay: number;
 
   @Input()
   set appDelay(time: number){
     setTimeout(
       () => {
         this.viewContainerRef.createEmbeddedView(this.templateRef);
-        //this.viewContainerRef.createEmbeddedView(this.templateRef);
+        this.viewContainerRef.createEmbeddedView(this.templateRef);
         this.viewContainerRef.createEmbeddedView(this.templateRef);
   },
       time
