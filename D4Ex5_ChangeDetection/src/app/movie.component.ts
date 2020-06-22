@@ -17,11 +17,27 @@ import { Actor } from './actor.model';
   changeDetection: ChangeDetectionStrategy.
    //Default
 OnPush
+/*
+OnPush tagged components and their entire children tree will be skipped in the Change Detection cycle
+OnPush will still trigger full Change Detection when
+	- the input reference has changed
+	- the component or one of its children triggers an event handler
+	- change detection is triggered manually
+	- an observable linked to the template via the async pipe emits a new value
+*/
 })
 export class MovieComponent {
   @Input() title: string;
   @Input() actor: Actor;
+  //Watch how the docheck and onchanges LifecycleHooks are called based on the ChangeDetectionStrategy above
+  ngDoCheck(){
+    console.log("DoCheck called");
+    }
   
+    ngOnChanges(){
+      console.log("OnChanges called");
+      }
+    
 }
 //ref = obj1; obj1.name=?
 
