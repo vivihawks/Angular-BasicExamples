@@ -24,3 +24,6 @@ import {FeatureModule2Module} from './feature-module2/feature-module2.module';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+//Angular App > Angular Modules > Angular Components

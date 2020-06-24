@@ -32,6 +32,12 @@ import { NgZone,Component } from '@angular/core';
     </div>
     <div >
       <h2>Template Local Variable a.k.a Aliases</h2>
+      <!-- 
+      In the below tempLocal expression, the event listener or any binding is important for Angular to include it in Change Detection.
+      Watch what happens if you remove the event binding below. It could be something as simple as "(input)='0'" for it to work.
+      If there is no binding, then this text box is not included in Change Detection and the variable will not pick up changes 
+      to the text box
+      -->
       <input type="text" placeholder="Watch the text update below!" #tempLocal (input)="tempLocal.value = $event.target.value" />
       <br>
       <span>{{tempLocal?.value}}</span>
@@ -52,14 +58,16 @@ export class BindingComponent {
   dynamicValue: string = 'Winning!';
   
   constructor(){
-    setTimeout( _=> this.componentStyle = "green",1000);
-    /*setTimeout( 
+    setTimeout( _=> this.componentStyle = "green",2000);
+    /*
+    setTimeout( 
       function(){
         this.componentStyle = "green"
       },
       1000
-    );*/
-    setTimeout(_=> this.componentStyle = "blue",3000);
+    );
+    */
+    setTimeout(_=> this.componentStyle = "blue",4000);
     
   }
   alertTheWorld(): void {

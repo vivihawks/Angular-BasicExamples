@@ -2,12 +2,10 @@
 function xyz(label: string, count: number) {
   return function (target: any, key: string) {
 
-
     Object.defineProperty(target, key, { 
       configurable: false,
       get: () => label
     });
-
 
 
   }
