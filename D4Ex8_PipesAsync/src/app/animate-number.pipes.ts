@@ -1,13 +1,7 @@
 import { Pipe, PipeTransform, ChangeDetectorRef } from '@angular/core';
-<<<<<<< HEAD
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/take';
-=======
 import * as Rx from 'rxjs';
 import { from, of , interval} from "rxjs";
 import {take, map, catchError,delay, timeout,concat} from 'rxjs/operators';
->>>>>>> c2747ff (Angular 12 Upgrade)
 
 
 // naive implementation assumes small number increments
@@ -28,15 +22,9 @@ export class AnimateNumberPipe implements PipeTransform {
       //1,2,3,4,5
       //current = 100, new = 105, difference = 5
     //For every 100 ms
-<<<<<<< HEAD
-      Observable.interval(100)
-      //For difference (5) number of times
-        .take(difference)
-=======
       interval(100).pipe(
       //For difference (5) number of times
         take(difference))
->>>>>>> c2747ff (Angular 12 Upgrade)
         //repeat this logic
         .subscribe(() => {
           this.currentNumber++;

@@ -5,11 +5,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-<<<<<<< HEAD
-    "target": "es5",
-=======
     "target": "es6",
->>>>>>> c2747ff (Angular 12 Upgrade)
     "lib": [
       "es2016",
       "dom"

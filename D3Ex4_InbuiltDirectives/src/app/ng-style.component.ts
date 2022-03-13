@@ -23,19 +23,11 @@ import { Component } from '@angular/core';
     styles: ['.box {max-width: 450px; padding: 5px; }']
 })
 export class NgStyleComponent {
-<<<<<<< HEAD
-    private big = false;
-    private back = false;
-    private bord = false;
-
-    private get myStyles(): any {
-=======
      big = false;
      back = false;
      bord = false;
 brighter;
      get myStyles(): any {
->>>>>>> c2747ff (Angular 12 Upgrade)
         return {
             'font-size' : this.big ? '26px' : '14px',
             'color' : this.back ? 'Blue' : 'Black',

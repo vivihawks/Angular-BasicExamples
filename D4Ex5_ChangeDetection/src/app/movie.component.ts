@@ -12,19 +12,12 @@ import { Actor } from './actor.model';
         <label>Actor:</label>
         <span>{{actor.firstName}} {{actor.lastName}}</span>
       </p>
-<<<<<<< HEAD
-=======
       
->>>>>>> c2747ff (Angular 12 Upgrade)
     </div>`,
     //Toggle one of Default / OnPush strategies below to understand the differences
   changeDetection: ChangeDetectionStrategy.
    //Default
-<<<<<<< HEAD
-OnPush
-=======
     OnPush
->>>>>>> c2747ff (Angular 12 Upgrade)
 /*
 OnPush tagged components and their entire children tree will be skipped in the Change Detection cycle
 OnPush will still trigger full Change Detection when
@@ -44,10 +37,6 @@ export class MovieComponent {
   
     ngOnChanges(){
       console.log("OnChanges called");
-<<<<<<< HEAD
-=======
-
->>>>>>> c2747ff (Angular 12 Upgrade)
       }
     
 }

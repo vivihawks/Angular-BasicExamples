@@ -14,17 +14,10 @@ import { Component } from "@angular/core";
 })
 export class HostComponent {
 
-<<<<<<< HEAD
-    private elementContent = 'click me';
-    private clickerContent = 'click me as well';
-
-    private sharedObject = {
-=======
      elementContent = 'click me';
      clickerContent = 'click me as well';
 
      sharedObject = {
->>>>>>> c2747ff (Angular 12 Upgrade)
         id: 123,
         name: 'one-two-three'
     };
