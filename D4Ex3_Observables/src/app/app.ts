@@ -68,10 +68,17 @@ import { map, catchError,delay, timeout } from 'rxjs/operators';
 
 export class App implements OnInit{
   //For Example 1
+<<<<<<< HEAD
   private data: Observable<number>;
   private values: Array<number> = [];
   private anyErrors: boolean;
   private finished: boolean;
+=======
+   data: Observable<number>;
+   values: Array<number> = [];
+   anyErrors: boolean;
+   finished: boolean;
+>>>>>>> c2747ff (Angular 12 Upgrade)
   
   //For Example 2
   items: {}[] = [];
@@ -115,6 +122,7 @@ export class App implements OnInit{
               }, 4000);
 
           setTimeout(() => {
+<<<<<<< HEAD
               observer.error();
               //observer.complete();
           }, 5000);
@@ -132,6 +140,26 @@ export class App implements OnInit{
           value => this.values.unshift(333)
       );
     
+=======
+              //observer.error();
+              observer.complete();
+          }, 5000);
+      })
+    //  publish;
+
+      let subscription = this.data.subscribe(
+        // function(abc) { this.values.push(abc) },
+        value => this.values.push(value),
+         error => this.anyErrors = true,
+         () => this.finished = true
+     );
+   
+      let subscription2 = this.data.subscribe(
+         //function(value){this.values.push(value)},
+         value => this.values.unshift(333)
+     );
+   
+>>>>>>> c2747ff (Angular 12 Upgrade)
   }
   
   constructor(
@@ -142,6 +170,7 @@ export class App implements OnInit{
     //Example 2 : Observable Map
     //Observable
       from([{price: 1}, {price: 2}, {price: 3}, {price: 4}, {price: 5}]).pipe(
+<<<<<<< HEAD
       //Maps A, B below do the same thing. Different ways to do the same task
       //Map A
      //.map(item => {
@@ -152,17 +181,36 @@ export class App implements OnInit{
         	return {price:item.price*2};
       }))
        
+=======
+        map(item => {
+            return {price:item.price*2};
+            }
+        )
+      )
+       
+      //new Promise().then().then().then()
+
+>>>>>>> c2747ff (Angular 12 Upgrade)
       .subscribe(item => this.items.unshift(item));
     
     //Example 3 : Observable Error Handling
     var source = //Rx.Observable
         of("42","43","45","Last Number").pipe(
+<<<<<<< HEAD
         // This will complete in 5 seconds
         delay(5000)
         // We will override this to throw an error in 1 second
         ,timeout(1000)
         // Uncomment this to catch the error and continue the stream
         ,catchError(() => of('Recovering!'))
+=======
+            // This will complete in 5 seconds
+            delay(5000)
+            // We will override this to throw an error in 1 second
+            ,timeout(1000)
+            // Uncomment this to catch the error and continue the stream
+            ,catchError(() => of('Recovering!'))
+>>>>>>> c2747ff (Angular 12 Upgrade)
         );
  
      var subscription = source.subscribe(
@@ -176,13 +224,22 @@ export class App implements OnInit{
 //Example 4 : Mouse Event Observer. HOT Observable
     ngOnInit() {
     observableFromEvent<MouseEvent>(this.elementRef.nativeElement, 'mousemove').pipe(
+<<<<<<< HEAD
     debounceTime(20)
     ,map(evt => { return {x: evt.clientX, y: evt.clientY}; })
+=======
+        debounceTime(20)
+        ,map(evt => { return {x: evt.clientX, y: evt.clientY}; })
+>>>>>>> c2747ff (Angular 12 Upgrade)
    )
     .subscribe(
       coordinate => {
         this.coordinates.unshift(coordinate);
+<<<<<<< HEAD
         this.detectorRef.detectChanges();
+=======
+        //this.detectorRef.detectChanges();
+>>>>>>> c2747ff (Angular 12 Upgrade)
       },
       err => console.log('Error:', err),
       () => console.log('Completed')

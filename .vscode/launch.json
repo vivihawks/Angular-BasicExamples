@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+<<<<<<< HEAD
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
@@ -18,6 +19,20 @@
             "address": "localhost",
             "port": 5858,
             "outFiles": []
+=======
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [
+                {
+                    "url": "webpack:///src/app",
+                    "path": "${workspaceFolder}/D2Ex5_ComponentIO/src/app"
+                }
+            ]
+>>>>>>> c2747ff (Angular 12 Upgrade)
         }
     ]
 }

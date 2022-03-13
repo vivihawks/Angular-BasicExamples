@@ -9,7 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+<<<<<<< HEAD
     private showSection(name: string): boolean {
+=======
+     showSection(name: string): boolean {
+>>>>>>> c2747ff (Angular 12 Upgrade)
         if (!window.location.search) {
             console.log(window.location.search)
             return true;

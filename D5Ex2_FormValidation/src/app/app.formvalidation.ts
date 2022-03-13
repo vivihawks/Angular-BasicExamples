@@ -22,7 +22,11 @@ import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
     
       <div class="form-group" [ngClass]="{'has-error':!complexForm.controls['lastName'].valid && complexForm.controls['lastName'].touched}">
         <label>Last Name</label>
+<<<<<<< HEAD
         <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['lastName']">
+=======
+        <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['lastName']" >
+>>>>>>> c2747ff (Angular 12 Upgrade)
         <div *ngIf="complexForm.controls['lastName'].hasError('required') && complexForm.controls['lastName'].touched" class="alert alert-danger">You must include a last name.</div>
         <div *ngIf="complexForm.controls['lastName'].hasError('minlength') && complexForm.controls['lastName'].touched" class="alert alert-danger">Your last name must be at least 5 characters long.</div>
         <div *ngIf="complexForm.controls['lastName'].hasError('maxlength') && complexForm.controls['lastName'].touched" class="alert alert-danger">Your last name cannot exceed 10 characters.</div>

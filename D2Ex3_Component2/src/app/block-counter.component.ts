@@ -13,12 +13,21 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class BlockCounterComponent {
 
+<<<<<<< HEAD
     private counter: Counter = new Counter;
 
     private updateCount(adjustment:number = 1) {
         this.counter.count += adjustment;
     }
     private get blocks() {
+=======
+     counter: Counter = new Counter;
+
+     updateCount(adjustment:number = 1) {
+        this.counter.count += adjustment;
+    }
+     get blocks() {
+>>>>>>> c2747ff (Angular 12 Upgrade)
         return '&#9609;'.repeat(this.counter.count);
     }
 }

@@ -17,17 +17,28 @@ import { Component } from '@angular/core';
     styles: ['.highlight {background-color: Lavender }']
 })
 export class NgForComponent {
+<<<<<<< HEAD
     private people = [
+=======
+     people = [
+>>>>>>> c2747ff (Angular 12 Upgrade)
             {id: 1, name: {forename: 'John', surname: 'Doe'}},
             {id: 2, name: {forename: 'John', surname: 'Smith'}},
             {id: 3, name: {forename: 'Peter', surname: 'Scott'}},
             {id: 4, name: {forename: 'Sue', surname: 'Reece'}}
         ];
 
+<<<<<<< HEAD
     private trackByPeople(index: number, person: any) {
         return person.id;
     }
     private forLoopArray(elements: number): Array<any> {
+=======
+     trackByPeople(index: number, person: any) {
+        return person.id;
+    }
+     forLoopArray(elements: number): Array<any> {
+>>>>>>> c2747ff (Angular 12 Upgrade)
         return new Array(elements);
     }
 }

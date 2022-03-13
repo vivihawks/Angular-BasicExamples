@@ -6,10 +6,14 @@
 <title>ES6 - Ex6 | Spread and Rest Operators</title>
 <script>
 	(function() {
-		//Spread Usage
+		//Spread Usage test commit
 		const add = (a, b) => a + b;
 		let args = [ 3, 5 ];
 		add(...args); // same as `add(args[0], args[1])`, or `add.apply(null, args)	  
+<<<<<<< HEAD
+=======
+		//add(3,5)
+>>>>>>> c2747ff (Angular 12 Upgrade)
 		let cde = [ 'c', 'd', 'e' ];
 		let scale = [ 'a', 'b', ...cde, 'f', 'g' ]; 
 		//let scale = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
@@ -37,7 +41,11 @@
 
 		addSimple(3, 2); // 5
 		addRest(1, 2, 3,4); 
+<<<<<<< HEAD
 		addRest(1, 2);  
+=======
+		addRest(function(){}, 2, undefined, []);  
+>>>>>>> c2747ff (Angular 12 Upgrade)
 		addRest(1);  
 		addRest(); 
 

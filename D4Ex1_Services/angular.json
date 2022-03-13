@@ -3,14 +3,28 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "d2-ex6-component-projection": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+=======
+    "HelloAngular": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+>>>>>>> c2747ff (Angular 12 Upgrade)
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,11 +41,36 @@
           },
           "configurations": {
             "prod": {
+=======
+            "outputPath": "dist/HelloAngular",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+>>>>>>> c2747ff (Angular 12 Upgrade)
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
+<<<<<<< HEAD
               ]
             },
             "production": {
@@ -46,10 +85,36 @@
               "buildOptimizer": true
             }
           }
+=======
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": ""
+>>>>>>> c2747ff (Angular 12 Upgrade)
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "d2-ex6-component-projection:build"
           },
           "configurations": {
@@ -58,19 +123,31 @@
             },
             "production": {
               "browserTarget": "d2-ex6-component-projection:build:production"
+=======
+            "browserTarget": "HelloAngular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "HelloAngular:build:production"
+>>>>>>> c2747ff (Angular 12 Upgrade)
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "d2-ex6-component-projection:build"
+=======
+            "browserTarget": "HelloAngular:build"
+>>>>>>> c2747ff (Angular 12 Upgrade)
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+<<<<<<< HEAD
             "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
@@ -82,12 +159,26 @@
               "src/assets",
               "src/favicon.ico"
             ]
+=======
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+>>>>>>> c2747ff (Angular 12 Upgrade)
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
+<<<<<<< HEAD
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
@@ -115,11 +206,33 @@
               "e2e/tsconfig.e2e.json"
             ],
             "exclude": []
+=======
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "HelloAngular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "HelloAngular:serve:production"
+            }
+>>>>>>> c2747ff (Angular 12 Upgrade)
           }
         }
       }
     }
   },
+<<<<<<< HEAD
   "defaultProject": "d2-ex6-component-projection",
   "schematics": {
     "@schematics/angular:component": {
@@ -129,5 +242,10 @@
     "@schematics/angular:directive": {
       "prefix": "app"
     }
+=======
+  "defaultProject": "HelloAngular",
+  "cli": {
+    "analytics": "4681d9e2-e203-4e02-9a92-49f9214503a4"
+>>>>>>> c2747ff (Angular 12 Upgrade)
   }
 }

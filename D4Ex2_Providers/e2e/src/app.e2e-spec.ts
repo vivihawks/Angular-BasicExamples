@@ -1,6 +1,10 @@
 import { browser, element, by } from 'protractor';
 import { logging } from 'selenium-webdriver';
+<<<<<<< HEAD
 
+=======
+import { } from 'jasmine';
+>>>>>>> c2747ff (Angular 12 Upgrade)
 describe('Providers and ViewProviders', function () {
 
 

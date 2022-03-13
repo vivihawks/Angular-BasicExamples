@@ -7,7 +7,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export default class ComponentTwo {
 
+<<<<<<< HEAD
   private id:number;
+=======
+   id:number;
+>>>>>>> c2747ff (Angular 12 Upgrade)
   private sub: any;
   constructor(private route: ActivatedRoute) {}
 

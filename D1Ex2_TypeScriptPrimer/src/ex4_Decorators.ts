@@ -11,9 +11,16 @@ function xyz(label: string, count: number) {
   }
 }
 
+<<<<<<< HEAD
 class Test {
   // invokes Override, which returns the decorator
   @xyz('test', 142) 
+=======
+
+class Test {
+  // invokes Override, which returns the decorator
+  @xyz('test', 142)
+>>>>>>> c2747ff (Angular 12 Upgrade)
   name: string = 'pat';
 
   @xyz('',12)
@@ -52,6 +59,10 @@ function logPosition(target: any, propertyKey: string, parameterIndex: number) {
 }
 
 class Cow {
+<<<<<<< HEAD
+=======
+  
+>>>>>>> c2747ff (Angular 12 Upgrade)
   say(b: string, @logPosition c: boolean) {
     console.log(b);
   }

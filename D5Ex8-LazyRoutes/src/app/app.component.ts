@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Lazy loading feature modules';
+<<<<<<< HEAD
+=======
+  ngAfterViewInit(){
+		console.log("View Initialized")
+	}
+>>>>>>> c2747ff (Angular 12 Upgrade)
 }

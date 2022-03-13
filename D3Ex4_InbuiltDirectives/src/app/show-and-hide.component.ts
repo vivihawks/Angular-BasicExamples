@@ -40,7 +40,13 @@ import { Component } from "@angular/core";
     styles:["hr{  border:1px dotted yellow;}"]
 })
 export class ShowAndHideComponent {
+<<<<<<< HEAD
     private addToDom: boolean = true;
     private hidden: boolean = false;
     private visible: boolean = true;
+=======
+     addToDom: boolean = true;
+     hidden: boolean = false;
+     visible: boolean = true;
+>>>>>>> c2747ff (Angular 12 Upgrade)
 }

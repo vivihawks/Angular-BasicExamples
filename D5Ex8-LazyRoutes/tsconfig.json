@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+<<<<<<< HEAD
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -11,10 +12,21 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
+=======
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "esnext",
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
+<<<<<<< HEAD
       "es2018",
       "dom"
     ]
@@ -22,4 +34,10 @@
   "angularCompilerOptions": {
     "enableIvy": false,
   },
+=======
+      "es2017",
+      "dom"
+    ]
+  }
+>>>>>>> c2747ff (Angular 12 Upgrade)
 }

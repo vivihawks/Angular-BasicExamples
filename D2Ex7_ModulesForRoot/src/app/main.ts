@@ -18,5 +18,9 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   }
   window.ngRef = ref;
 
+<<<<<<< HEAD
   // Otherise, log the boot error
+=======
+  // Otherwise, log the boot error
+>>>>>>> c2747ff (Angular 12 Upgrade)
 }).catch(err => console.error(err));

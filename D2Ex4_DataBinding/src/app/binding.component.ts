@@ -38,7 +38,11 @@ import { NgZone,Component } from '@angular/core';
       If there is no binding, then this text box is not included in Change Detection and the variable will not pick up changes 
       to the text box
       -->
+<<<<<<< HEAD
       <input type="text" placeholder="Watch the text update below!" #tempLocal (input)="tempLocal.value = $event.target.value" />
+=======
+      <input type="text"  placeholder="Watch the text update below!" #tempLocal (input)="tempLocal.value = $event.target.value" />
+>>>>>>> c2747ff (Angular 12 Upgrade)
       <br>
       <span>{{tempLocal?.value}}</span>
     </div>
@@ -67,13 +71,21 @@ export class BindingComponent {
       1000
     );
     */
+<<<<<<< HEAD
     setTimeout(_=> this.componentStyle = "blue",4000);
+=======
+    setTimeout(_=> this.componentStyle = "purple",6000);
+>>>>>>> c2747ff (Angular 12 Upgrade)
     
   }
   alertTheWorld(): void {
   
     this.dynamicValue = "Losing! Boo!!!"
+<<<<<<< HEAD
    this.componentStyle = 'green';
+=======
+   this.componentStyle = 'orange';
+>>>>>>> c2747ff (Angular 12 Upgrade)
     alert('I clicked the button!');
   }
 }

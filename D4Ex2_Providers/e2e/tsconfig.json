@@ -3,11 +3,21 @@
   "compilerOptions": {
     "outDir": "../out-tsc/e2e",
     "module": "commonjs",
+<<<<<<< HEAD
     "target": "es5",
     "types": [
       "jasmine",
       "jasminewd2",
       "node"
+=======
+    "target": "es5"
+    ,
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node",
+      "jest"
+>>>>>>> c2747ff (Angular 12 Upgrade)
     ]
   }
 }

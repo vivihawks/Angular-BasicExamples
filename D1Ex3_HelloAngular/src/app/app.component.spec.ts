@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { TestBed, async } from '@angular/core/testing';
+=======
+import { TestBed, waitForAsync } from '@angular/core/testing';
+>>>>>>> c2747ff (Angular 12 Upgrade)
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+<<<<<<< HEAD
   beforeEach(async(() => {
+=======
+  beforeEach(waitForAsync(() => {
+>>>>>>> c2747ff (Angular 12 Upgrade)
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule

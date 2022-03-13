@@ -13,7 +13,11 @@ export default class ComponentOne {
     private route: ActivatedRoute,
     private router: Router) {}
   private sub: any;
+<<<<<<< HEAD
   private page: number;
+=======
+   page: number;
+>>>>>>> c2747ff (Angular 12 Upgrade)
   ngOnInit() {
     this.sub = this.route
       .queryParams

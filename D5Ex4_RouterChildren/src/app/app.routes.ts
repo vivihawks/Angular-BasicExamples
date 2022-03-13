@@ -12,4 +12,8 @@ export const routes: Routes = [
     ...BlueRoutes
 ];
 
+<<<<<<< HEAD
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+=======
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(routes);
+>>>>>>> c2747ff (Angular 12 Upgrade)

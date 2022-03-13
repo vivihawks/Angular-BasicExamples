@@ -15,6 +15,10 @@ import { Actor } from './actor.model';
     <div style="margin:5px; font-family:verdana">The name of the Actor in the App Component is {{actor.firstName }}, {{actor.lastName}}</div>
     <app-movie [title]="title" [actor]="actor"></app-movie>`
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> c2747ff (Angular 12 Upgrade)
 export class AppComponent {
   slogan = 'Just movie information';
   title = 'Terminator 1';
@@ -22,7 +26,11 @@ export class AppComponent {
   randomNumber2 = 1;
   randomNumber = 1;
   changeActorProperties(): void {
+<<<<<<< HEAD
     this.title = `Terminator ` + this.randomNumber--;
+=======
+    //this.title = `Terminator ` + this.randomNumber--;
+>>>>>>> c2747ff (Angular 12 Upgrade)
     this.actor.firstName = 'Nicholas';
     this.actor.lastName = 'Cage';
   }

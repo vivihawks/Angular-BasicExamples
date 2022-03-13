@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
@@ -16,22 +17,66 @@
     },
     "eofline": true,
     "forin": true,
+=======
+  "extends": "tslint:recommended",
+  "rules": {
+    "align": {
+      "options": [
+        "parameters",
+        "statements"
+      ]
+    },
+    "array-type": false,
+    "arrow-return-shorthand": true,
+    "curly": true,
+    "deprecation": {
+      "severity": "warning"
+    },
+    "component-class-suffix": true,
+    "contextual-lifecycle": true,
+    "directive-class-suffix": true,
+    "directive-selector": [
+      true,
+      "attribute",
+      "app",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "eofline": true,
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
     "import-spacing": true,
+<<<<<<< HEAD
     "indent": [
       true,
       "spaces"
     ],
     "interface-over-type-literal": true,
     "label-position": true,
+=======
+    "indent": {
+      "options": [
+        "spaces"
+      ]
+    },
+    "max-classes-per-file": false,
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "max-line-length": [
       true,
       140
     ],
+<<<<<<< HEAD
     "member-access": false,
+=======
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "member-ordering": [
       true,
       {
@@ -43,8 +88,11 @@
         ]
       }
     ],
+<<<<<<< HEAD
     "no-arg": true,
     "no-bitwise": true,
+=======
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "no-console": [
       true,
       "debug",
@@ -53,16 +101,21 @@
       "timeEnd",
       "trace"
     ],
+<<<<<<< HEAD
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
+=======
+    "no-empty": false,
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
+<<<<<<< HEAD
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": true,
@@ -83,10 +136,21 @@
       "check-whitespace"
     ],
     "prefer-const": true,
+=======
+    "no-non-null-assertion": true,
+    "no-redundant-jsdoc": true,
+    "no-switch-case-fall-through": true,
+    "no-var-requires": false,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+>>>>>>> c2747ff (Angular 12 Upgrade)
     "quotemark": [
       true,
       "single"
     ],
+<<<<<<< HEAD
     "radix": true,
     "semicolon": [
       true,
@@ -141,3 +205,71 @@
     "directive-class-suffix": true
   }
 }
+=======
+    "semicolon": {
+      "options": [
+        "always"
+      ]
+    },
+    "space-before-function-paren": {
+      "options": {
+        "anonymous": "never",
+        "asyncArrow": "always",
+        "constructor": "never",
+        "method": "never",
+        "named": "never"
+      }
+    },
+    "typedef-whitespace": {
+      "options": [
+        {
+          "call-signature": "nospace",
+          "index-signature": "nospace",
+          "parameter": "nospace",
+          "property-declaration": "nospace",
+          "variable-declaration": "nospace"
+        },
+        {
+          "call-signature": "onespace",
+          "index-signature": "onespace",
+          "parameter": "onespace",
+          "property-declaration": "onespace",
+          "variable-declaration": "onespace"
+        }
+      ]
+    },
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-pascal-case"
+      ]
+    },
+    "whitespace": {
+      "options": [
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type",
+        "check-typecast"
+      ]
+    },
+    "no-conflicting-lifecycle": true,
+    "no-host-metadata-property": true,
+    "no-input-rename": true,
+    "no-inputs-metadata-property": true,
+    "no-output-native": true,
+    "no-output-on-prefix": true,
+    "no-output-rename": true,
+    "no-outputs-metadata-property": true,
+    "template-banana-in-box": true,
+    "template-no-negated-async": true,
+    "use-lifecycle-interface": true,
+    "use-pipe-transform-interface": true
+  },
+  "rulesDirectory": [
+    "codelyzer"
+  ]
+}
+>>>>>>> c2747ff (Angular 12 Upgrade)

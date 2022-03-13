@@ -36,7 +36,11 @@ export class App implements OnInit {
 //then(successCallback(){}, failureCallback(){})
     this.service.getItems()
       .then(
+<<<<<<< HEAD
           (result) => {
+=======
+          (result:any) => {
+>>>>>>> c2747ff (Angular 12 Upgrade)
             this.items = result;
             return "Output from First Then";
          }, 

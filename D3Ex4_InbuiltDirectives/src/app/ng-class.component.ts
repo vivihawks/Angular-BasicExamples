@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
     selector: 'ng-class-directive',
     template: `
         <h2>ngClass</h2>
+<<<<<<< HEAD
         
+=======
+>>>>>>> c2747ff (Angular 12 Upgrade)
         <button (click)="myClasses='bright border'">Bright</button>
         <button (click)="myClasses='dull'">Dull</button>
         <button (click)="myClasses=''">Default</button>
@@ -47,5 +50,13 @@ you able to apply only one class (of course you can use class. a few times but i
     ]
 })
 export class NgClassComponent {
+<<<<<<< HEAD
     private myClasses = '';
+=======
+     myClasses = '';
+     big;
+     back;
+     bord;
+     brighter;
+>>>>>>> c2747ff (Angular 12 Upgrade)
 }

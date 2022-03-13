@@ -6,7 +6,11 @@ import { CustomersComponent } from './customers.component';
 
 const routes: Routes = [
   {
+<<<<<<< HEAD
     path: '',
+=======
+    path: '', //http://host:port/app/customers/
+>>>>>>> c2747ff (Angular 12 Upgrade)
     component: CustomersComponent
   }
 ];

@@ -4,6 +4,7 @@
     "outDir": "./out-tsc/app",
     "types": []
   },
+<<<<<<< HEAD
   "include": [
     "src/**/*.ts"
   ],
@@ -20,5 +21,13 @@
     "src/**/*.5.ts",
     "src/**/*.6.ts",
     "src/**/*.7.ts"
+=======
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+>>>>>>> c2747ff (Angular 12 Upgrade)
   ]
 }
