@@ -10,13 +10,8 @@ export const routes: Routes = [
   { path: 'component-one', component: ComponentOne },
   {
     path: 'component-two',
-<<<<<<< HEAD
-    component: ComponentTwo,
-    canActivate: [ActivateGuard],
-=======
     canActivate: [ActivateGuard],
     component: ComponentTwo,
->>>>>>> c2747ff (Angular 12 Upgrade)
     canDeactivate: [DeactivateGuard]
   },
   {

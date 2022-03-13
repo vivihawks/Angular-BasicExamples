@@ -9,8 +9,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule);
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c2747ff (Angular 12 Upgrade)

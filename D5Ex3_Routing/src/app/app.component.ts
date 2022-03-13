@@ -23,11 +23,7 @@ import { Router } from '@angular/router';
 
     <div style="color: green; margin-top: 1rem;">Outlet:</div>
     <div style="border: 2px solid red; padding: 1rem;">
-<<<<<<< HEAD
-      <router-outlet></router-outlet>
-=======
       <router-outlet> </router-outlet>
->>>>>>> c2747ff (Angular 12 Upgrade)
       <---<<< Component output goes here
     </div>
   `

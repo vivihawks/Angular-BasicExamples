@@ -16,11 +16,7 @@ import { Component } from '@angular/core';
 })
 export class NgForComponent {
 
-<<<<<<< HEAD
-    private people = [
-=======
      people = [
->>>>>>> c2747ff (Angular 12 Upgrade)
         {id: 1, name: {forename: 'John', surname: 'Doe'}},
         {id: 2, name: {forename: 'John', surname: 'Smith'}},
         {id: 3, name: {forename: 'Peter', surname: 'Scott'}},
