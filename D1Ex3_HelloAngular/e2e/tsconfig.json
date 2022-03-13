@@ -3,11 +3,7 @@
   "compilerOptions": {
     "outDir": "../out-tsc/e2e",
     "module": "commonjs",
-<<<<<<< HEAD
-    "target": "es5",
-=======
     "target": "es2018",
->>>>>>> c2747ff (Angular 12 Upgrade)
     "types": [
       "jasmine",
       "jasminewd2",

@@ -22,10 +22,6 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-<<<<<<< HEAD
-            "aot": true,
-=======
->>>>>>> c2747ff (Angular 12 Upgrade)
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,9 +29,6 @@
             "styles": [
               "src/styles.scss"
             ],
-<<<<<<< HEAD
-            "scripts": []
-=======
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -43,7 +36,6 @@
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true
->>>>>>> c2747ff (Angular 12 Upgrade)
           },
           "configurations": {
             "production": {
@@ -56,10 +48,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-<<<<<<< HEAD
-              "extractCss": true,
-=======
->>>>>>> c2747ff (Angular 12 Upgrade)
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -77,12 +65,8 @@
                 }
               ]
             }
-<<<<<<< HEAD
-          }
-=======
           },
           "defaultConfiguration": ""
->>>>>>> c2747ff (Angular 12 Upgrade)
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -144,11 +128,6 @@
           }
         }
       }
-<<<<<<< HEAD
-    }},
-  "defaultProject": "HelloAngular"
-}
-=======
     }
   },
   "defaultProject": "HelloAngular",
@@ -156,4 +135,3 @@
     "analytics": "4681d9e2-e203-4e02-9a92-49f9214503a4"
   }
 }
->>>>>>> c2747ff (Angular 12 Upgrade)

@@ -17,19 +17,12 @@ function xyz(label, count) {
 }
 var Test = /** @class */ (function () {
     function Test() {
-<<<<<<< HEAD
-=======
         // invokes Override, which returns the decorator
->>>>>>> c2747ff (Angular 12 Upgrade)
         this.name = 'pat';
         this.age = 10;
     }
     __decorate([
-<<<<<<< HEAD
-        xyz('test', 142) // invokes Override, which returns the decorator
-=======
         xyz('test', 142)
->>>>>>> c2747ff (Angular 12 Upgrade)
     ], Test.prototype, "name");
     __decorate([
         xyz('', 12)
