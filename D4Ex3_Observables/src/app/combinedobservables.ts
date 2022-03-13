@@ -11,11 +11,7 @@ import { timer,pipe} from "rxjs";
   selector: 'obs-combined',
   template: `
     <div class="rendered" flex layout>
-<<<<<<< HEAD
-      <pre>{{conference | json}}</pre>
-=======
       <pre>conference$ | json</pre>
->>>>>>> c2747ff (Angular 12 Upgrade)
     </div>
     <h4>Ex 7 : Observable Creation Sources</h4>
     <ul>

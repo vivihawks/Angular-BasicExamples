@@ -31,11 +31,6 @@ import {Component} from '@angular/core';
         </ng-template>`
 })
 export class NgIfComponent {
-<<<<<<< HEAD
-    private showDirective = false;
-    private showElement = false;
-=======
      showDirective = false;
      showElement = false;
->>>>>>> c2747ff (Angular 12 Upgrade)
 }

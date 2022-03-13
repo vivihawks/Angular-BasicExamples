@@ -1,24 +1,15 @@
 import { Component, Input, OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 //<my-component counter=x>
-<<<<<<< HEAD
-=======
 // my-comp
       //compB
           //compB2
       //ng content : compA
       //compC
->>>>>>> c2747ff (Angular 12 Upgrade)
 //</my-component>
 @Component({
   selector: 'my-component',
   template: `
   <ng-content></ng-content>
-<<<<<<< HEAD
-    <h3 layout-margin><small>Counter:</small> {{counter}}</h3>
-    <h1>Lifecyle hook log:</h1>
-    <h3 *ngFor="let hook of hooks">{{hook}}</h3>
-    <button name="Dummy Button" (click)="0"> Dummy Button </button>
-=======
   
     <h3 layout-margin><small>Counter:</small> {{counter}}</h3>
     <h1>Lifecyle hook log:</h1>
@@ -26,18 +17,13 @@ import { Component, Input, OnInit, OnChanges, AfterContentInit, AfterContentChec
     
     
     <button name="Dummy Button"> Dummy Button </button>
->>>>>>> c2747ff (Angular 12 Upgrade)
   `,
   changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class MyComponent implements OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   //Toggle the @input decorator below and see how the ngOnChanges is called or skipped based on it
-<<<<<<< HEAD
-  //@Input() 
-=======
   @Input() 
->>>>>>> c2747ff (Angular 12 Upgrade)
   counter: number = 0;
   hooks: Array<string> = [];
 
@@ -45,11 +31,7 @@ export class MyComponent implements OnInit, OnChanges, AfterContentInit, AfterCo
 /*
 0. Constructor
 1. onChanges - I/O values are being initialized 
-<<<<<<< HEAD
-2. onInit - Component is ready
-=======
 2. onInit - Component Class is ready
->>>>>>> c2747ff (Angular 12 Upgrade)
 3. onChanges - anytime i/o changes. Called only if i/o changes
 4. doCheck - after onChanges, even though nothing relevant changed. For custom ways of detecting changes. ALERT - Called very frequently. Implementation must  be light
 5. ** Parent **  DOM Updates / Rendering of the template without bindings
@@ -62,12 +44,9 @@ export class MyComponent implements OnInit, OnChanges, AfterContentInit, AfterCo
 12. afterViewChecked - after doCheck. View checked
 13. onDestroy - Component is about to be killed
 
-<<<<<<< HEAD
-=======
 constructor > onChanges > onInit > afterViewInit >  onDestroy
 
 
->>>>>>> c2747ff (Angular 12 Upgrade)
 *** TEASER >>> Compare the order in which messages are shown in the UI vs Console. Reason why?
 */
 

@@ -1,25 +1,4 @@
 {
-<<<<<<< HEAD
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "suppressImplicitAnyIndexErrors":true
-  },
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "exclude": [
-    "node_modules"
-  ],
-  "filesGlob": [
-    "app/**/*.ts",
-    "typings/index.d.ts"
-  ],
-  "atom": {
-    "rewriteTsconfig": false
-=======
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
@@ -37,6 +16,5 @@
       "es2017",
       "dom"
     ]
->>>>>>> c2747ff (Angular 12 Upgrade)
   }
 }

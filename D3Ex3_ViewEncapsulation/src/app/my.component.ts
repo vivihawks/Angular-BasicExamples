@@ -40,11 +40,7 @@ div, pre {
   //None = Styles defined in this component are defined at the global dom level. This makes them available
   //to the entire document and all other components. These will be injected as style in the <head> element 
   //of the index.html
-<<<<<<< HEAD
-   // encapsulation: ViewEncapsulation.ShadowDom // Try "Emulated","ShadowDom", "Native" and "None" as well
-=======
   // encapsulation: ViewEncapsulation.Emulated // Try "Emulated","ShadowDom", "Native" and "None" as well
->>>>>>> c2747ff (Angular 12 Upgrade)
 })
  
 export class MyComponent {

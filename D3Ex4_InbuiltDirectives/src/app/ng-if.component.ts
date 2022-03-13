@@ -20,13 +20,6 @@ import { Component } from '@angular/core';
         </ng-template>
 		<ng-template #elseBlock> Else Block Showing up </ng-template>
 <br>
-<<<<<<< HEAD
-<div *ngIf="show">
-This is the output of a simple if
-</div>	
-<div *ngIf="!show">
-This is another output of a simple if 
-=======
 
 
 <div *ngIf="show">
@@ -34,14 +27,9 @@ This is another output of a simple if
 </div>	
 <div *ngIf="!show">
     This is another output of a simple if 
->>>>>>> c2747ff (Angular 12 Upgrade)
 </div>	
 		`
 })
 export class NgIfComponent {
-<<<<<<< HEAD
-    private show = false;
-=======
      show = false;
->>>>>>> c2747ff (Angular 12 Upgrade)
 }

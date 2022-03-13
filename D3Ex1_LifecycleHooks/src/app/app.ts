@@ -25,11 +25,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 export class App {
   private counter: number = 0;
-<<<<<<< HEAD
-  private showMyComponent: boolean = true;
-=======
    showMyComponent: boolean = true;
->>>>>>> c2747ff (Angular 12 Upgrade)
 
   increment() {
     this.counter++;

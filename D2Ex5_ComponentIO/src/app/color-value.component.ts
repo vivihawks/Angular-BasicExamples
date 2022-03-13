@@ -27,11 +27,7 @@ export class ColorValueComponent implements OnInit {
 
      //Constructor >> onChanges >> onInit >> onChanges Recursive
 
-<<<<<<< HEAD
-    private sendColor(color: string): void {
-=======
      sendColor(color: string): void {
->>>>>>> c2747ff (Angular 12 Upgrade)
         this.colorValueEvent.emit(color);
     }
 }

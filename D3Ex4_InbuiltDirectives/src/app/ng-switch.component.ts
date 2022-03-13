@@ -20,9 +20,5 @@ import { Component } from '@angular/core';
         </div>`
 })
 export class NgSwitchComponent {
-<<<<<<< HEAD
-    private choice: string = 'one';
-=======
      choice: string = 'one';
->>>>>>> c2747ff (Angular 12 Upgrade)
 }
