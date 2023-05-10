@@ -8,5 +8,5 @@ import { RedGreenBlue } from "./red-green-blue";
     styles: ['pre {height: 90px; width: 140px; padding: 10px;}']
 })
 export class ColorBoxComponent {
-    @Input("rgb") redGreenBlue: RedGreenBlue;
+    @Input("rgb") redGreenBlue: RedGreenBlue = new RedGreenBlue();
 }

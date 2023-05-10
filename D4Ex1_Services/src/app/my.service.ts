@@ -1,9 +1,13 @@
 import { CharacterService } from './character.service';
 import { Item } from './items';
 import { Injectable } from '@angular/core';
-@Injectable()
-//@Injectable({providedIn : 'root'})
+// @Injectable()
+@Injectable({providedIn : 'root'})
 export class MyService {
+
+  //Observable or Subject here
+  public searchTerms: String = '';
+
   private items: Array<Item> = [
     { name: 'Item 1', description: 'Epic item!' },
     { name: 'Item 2', description: 'As great as the first!' },
@@ -17,7 +21,7 @@ export class MyService {
   
   getTotalCharacters() {
     return  this.items.map(
-          (item) => {
+          (item:any) => {
             //Item 1Epic item!
             //Item 2As great as the first!
             //Last OneA round of applause for this one

@@ -17,11 +17,11 @@ import { map, catchError, delay, timeout, switchMap } from 'rxjs/operators';
 @Component({
 	selector: 'app',
 	template: `
-		<form [formGroup]="coolForm"><input formControlName="search" #term placeholder="Search Indian Cities"></form>
+		<form [formGroup]="coolForm"><input formControlName="search" #term placeholder="Search Countries by Cap Cities"></form>
 		<ul *ngIf="result"> 
-		<h3>Indian cities that contain <u>{{term.value}}</u> in the name</h3>
+		<h3>Cities that contain <u>{{term.value}}</u> in the name</h3>
 		<li *ngFor="let item of result">
-		  {{item["City"]}}, {{item.District}}, {{item.State}}
+		  {{item['name']}}
 		</li>
 		</ul>
 	`,

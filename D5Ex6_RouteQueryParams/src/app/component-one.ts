@@ -13,7 +13,7 @@ export default class ComponentOne {
     private route: ActivatedRoute,
     private router: Router) {}
   private sub: any;
-   page: number;
+   page: number = 0;
   ngOnInit() {
     this.sub = this.route
       .queryParams

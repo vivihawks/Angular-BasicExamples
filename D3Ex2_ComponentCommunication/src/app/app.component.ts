@@ -28,30 +28,25 @@ import { AlertComponent } from './alert.component';
 	    <app-hello #last name="Last World"></app-hello>
 	  </app-hello-list>
   
-    <app-hello-list>
-	  </app-hello-list>
-
-	  <app-hello-list>
-	    Some Text Here
-    </app-hello-list>
     <p>Calls function on child component classes to randomize color of them.</p>
 	  `
 })
 export class AppComponent {
-  @ViewChild('first') alert: AlertComponent;
-  @ViewChildren(AlertComponent) alerts: QueryList<AlertComponent>;
-  @ViewChild('statusContainer') status: ElementRef;   
-  alertsArr = [];
+  @ViewChild('first') alert!: AlertComponent;
+  @ViewChildren(AlertComponent) alerts!: QueryList<AlertComponent>;
+  @ViewChild('statusContainer') status!: ElementRef;   
+  alertsArr!:AlertComponent[];
   text : String = "This text will be replaced by Child Component";
 
   ngAfterViewInit() {
     this.alertsArr = this.alerts.toArray();
     this.status.nativeElement.style.color = "red"
+    this.status.nativeElement.innerHTML = this.text;
   }
   //1 = index 0
   //2 = index 1
-  showAlert(step) {
-    this.status.nativeElement.innerHTML = `<marquee width="20%" direction="right"><b>Showing Alert ${step+1}</b></marquee>`
+  showAlert(step:number) {
+    // this.status.nativeElement.innerHTML = `<marquee width="20%" direction="right"><b>Showing Alert ${step+1}</b></marquee>`
     this.alertsArr[step].show(); // step 1 is alert index 0
   }
 }

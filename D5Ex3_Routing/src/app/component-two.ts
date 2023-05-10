@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export default class ComponentTwo {
 
-   id:number;
+   id:number = 0;
   private sub: any;
   constructor(private route: ActivatedRoute) {}
 

@@ -24,7 +24,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 
 export class App {
-  private counter: number = 0;
+   counter: number = 0;
    showMyComponent: boolean = true;
 
   increment() {

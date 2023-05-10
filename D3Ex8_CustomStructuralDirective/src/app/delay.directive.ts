@@ -4,12 +4,12 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
   selector: '[appDelay]'
 })
 //<body>
-  //<div *appDelay="1000">  
-  // -- Content --- 
-  //</div>
-  //<span *appDelay="1000">  
-  // -- Content --- 
-  //</span>
+//<div *appDelay="1000">  
+// -- Content --- 
+//</div>
+//<span *appDelay="1000">  
+// -- Content --- 
+//</span>
 //</body>
 
 // ng generate dirctive Delay
@@ -21,16 +21,17 @@ export class DelayDirective {
   ) { }
   //@Input() abc: number;  
 
- //@Input() appDelay: number;
+//  @Input() appDelay: number;
 
   @Input()
-  set appDelay(time: number){
+  set appDelay(time: number) {
     setTimeout(
       () => {
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
-        
-  },
+         this.viewContainerRef.createEmbeddedView(this.templateRef);
+         this.viewContainerRef.createEmbeddedView(this.templateRef);
+         this.viewContainerRef.createEmbeddedView(this.templateRef);
+         this.viewContainerRef.createEmbeddedView(this.templateRef);
+      },
       time
     );
   }

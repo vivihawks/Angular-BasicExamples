@@ -21,7 +21,7 @@ import { Observable } from 'rxjs';
 })
 
 export class App implements OnInit {
-  items: Observable<Array<Item>>;
+  items!: Item[];
 
   constructor(private service: MyService, private cd: ChangeDetectorRef) {}
 
@@ -38,6 +38,8 @@ export class App implements OnInit {
       .then(
           (result:any) => {
             this.items = result;
+            console.log(this.items);
+
             return "Output from First Then";
          }, 
           (error) => {

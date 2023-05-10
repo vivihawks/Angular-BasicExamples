@@ -9,11 +9,11 @@
   </ng-container>
   
   <!-- Swap ng-container vs div below to see the difference in behavior and what is rendered-->
-    <div *ngFor="let item of [1,2,3,4,5,6]">
-      <app-card *appDelay="1000*item"><!--Container-->
-        {{item}}<!--Template-->
-      </app-card>
-    </div>
+  <div *ngFor="let item of [1,2,3,4,5,6]">
+     <app-card *appDelay="1000*item"><!--Container-->
+       {{item}}<!--Template-->
+     </app-card>
+  </div>
   
     
 	<ng-container *ngTemplateOutlet="myTemplate">

@@ -41,14 +41,14 @@ you able to apply only one class (of course you can use class. a few times but i
         .box { max-width: 400px; padding: 5px; }
         .big { font-size: 26px; }
         .dull { background-color: Beige; }
-        .bright { color: Blue; background-color: Pink; }
+        .bright { color: red; background-color: Pink; }
         .border { border: 1px solid Red; }`
     ]
 })
 export class NgClassComponent {
-     myClasses = '';
-     big;
-     back;
-     bord;
-     brighter;
+     myClasses:string = '';
+     big:boolean = false;
+     back:boolean = false;
+     bord:boolean = false;
+     brighter:boolean = false;
 }

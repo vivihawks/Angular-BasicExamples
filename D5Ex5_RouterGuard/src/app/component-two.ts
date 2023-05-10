@@ -13,7 +13,7 @@ import {Component} from '@angular/core';
 })
 export default class ComponentTwo {
   constructor() {}
-checked: boolean ;
+checked: boolean =false;
   canDeactivate() {
     return this.checked;
   }

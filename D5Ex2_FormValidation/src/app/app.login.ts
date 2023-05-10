@@ -11,12 +11,12 @@ import {HttpClient, HttpResponse, HttpRequest} from '@angular/common/http';
     <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
       <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
         <label>Email:</label>
-        <input class="form-control" type="text" placeholder="John@doe.com" [formControl]="loginForm.controls['email']">
+        <input class="form-control" type="text" placeholder="John@doe.com" [formControl]="$any(loginForm.controls['email'])">
         <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
       </div>
       <div class="form-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
         <label>Password:</label>
-        <input class="form-control" type="password" placeholder="Password" [formControl]="loginForm.controls['password']">
+        <input class="form-control" type="password" placeholder="Password" [formControl]="$any(loginForm.controls['password'])">
         <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="alert alert-danger">You must add a password.</div>
       </div>
       <div class="form-group">
@@ -25,21 +25,21 @@ import {HttpClient, HttpResponse, HttpRequest} from '@angular/common/http';
     </form>
   </div>
   <div class="jumbotron text-center" *ngIf="authenticated">
-    <img src="{{profile.picture}}" />
-    <h2>Welcome, {{profile.email}}</h2>
+    <img src="{{profile?.picture}}" />
+    <h2>Welcome, {{profile?.email}}</h2>
     <a (click)="logout()">Logout</a>
   </div>
   `
 })
 export class LoginComponent {
   loginForm : FormGroup;
-  authenticated: boolean
-  profile : Object;
+  authenticated: boolean = false;
+  profile : any={};
 
   constructor(fb: FormBuilder, public http: HttpClient){
     if(localStorage.getItem('jwt')){
       this.authenticated = true;
-      this.profile = JSON.parse(localStorage.getItem('profile'));
+      this.profile = JSON.parse(localStorage.getItem('profile')??'');
     }
     this.loginForm = fb.group({
       'email' : [null, Validators.required],

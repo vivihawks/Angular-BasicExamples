@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template : `
   <div class="jumbotron">
     <h2>Template Driven Forms</h2>
-    <form #form="ngForm" (ngSubmit)="submitForm(form.value)" >
+    <form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)" >
       <div class="form-group">
         <label>First Name:</label>
         <input type="text" class="form-control" placeholder="John" name="firstName"  ngModel required>

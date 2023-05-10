@@ -1,0 +1,6 @@
+Toggle the below entry in angular.json and build the application to see the difference in time that Persistent Build Cache brings in
+
+
+	"cache": {
+	"enabled": true
+	}

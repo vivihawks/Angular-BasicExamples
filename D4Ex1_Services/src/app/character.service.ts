@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class CharacterService {
-  countCharacters(item) {
+  countCharacters(item:string) {
     return Object.keys(item)
     
     //name, description
-    .reduce((accumulated, current) => {
-      return accumulated.concat(item[current]);
+    .reduce((accumulated, current:string) => {
+      return accumulated.concat(item[Number(current)]);
       //return accumulated = accumulated + item[current])
     }, '');
   }

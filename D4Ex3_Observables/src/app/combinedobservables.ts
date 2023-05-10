@@ -149,8 +149,8 @@ export class ObsCombined {
      Timer Three Latest: ${timerValThree}`
       );
     });
-
-    setTimeout(() => subs.unsubscribe(), 20000)
+//Increase the unsubscribe timeout to see output in the console
+    setTimeout(() => subs.unsubscribe(), 20)
   }
 
   ngOnInit() {
@@ -180,14 +180,14 @@ export class ObsCombined {
       //There is only one stream that is shared by multiple subcribers
       .pipe(share())
     let subscription = observable.subscribe(
-      (val) => { this.items.push(val) },
-      (err) => { this.items.push("Ah! snap!! something blew up "); this.items.push(err) },
-      (done) => { this.items.push("Bye!! "); this.items.push(done) }
+      (val:any) => { this.items.push(val) },
+      (err:any) => { this.items.push("Ah! snap!! something blew up "); this.items.push(err) },
+      (done:any) => { this.items.push("Bye!! "); this.items.push(done) }
     );
     //This is how you unsubscribe
     setTimeout(() => { subscription.unsubscribe() }, 3000)
 
-    var subscription2 = observable.subscribe((data) => this.items.push("**Second Subscriber** - " + data))
+    var subscription2 = observable.subscribe((data:any) => this.items.push("**Second Subscriber** - " + data))
 
     //If you want subscribtions to be linked up and cancel the child if the parent unsubscribes
     //subscription.add(subscription2);
@@ -198,13 +198,13 @@ export class ObsCombined {
       var node = document.createElement("li");
       var textnode = document.createTextNode(val);
       node.appendChild(textnode);
-      document.getElementById("output" + num).appendChild(node);
+      document?.getElementById("output" + num)?.appendChild(node);
     }
 
     ///////Example 8  Subjects//////////////////////////////////////////
-    var subject = new Subject()
+    var subject = new Subject<string>(); 
 
-    subject.subscribe(
+    var observer1 = subject.subscribe(
       data => addItem('Observer 1: ' + data, 1),
       err => addItem(err, 1),
       () => addItem('Observer 1 Completed', 1)
@@ -220,6 +220,7 @@ export class ObsCombined {
     observer2.unsubscribe();
 
     subject.next('This is the last message')
+    subject.complete();
 
     ///////Example 9  Behavior Subjects//////////////////////////////////////////
 
@@ -243,21 +244,21 @@ export class ObsCombined {
     subject.next('This is the last message')
 
     ///////Example 10  Replay Subjects//////////////////////////////////////////
-    subject = new ReplaySubject(2)
+    subject = new ReplaySubject(1)
     subject.subscribe(
       data => addItem('Observer 1: ' + data, 3),
       err => addItem(err, 3),
       () => addItem('Observer 1 Completed', 3)
     )
     subject.next('This is the first message')
-    subject.next('This message will be caught by Observer 2 as well')
+    subject.next('This is the second message')
+    subject.next('This is the third message')
+    subject.next('This is the fourth message')
 
     var observer2 = subject.subscribe(
       data => addItem('Observer 2: ' + data, 3)
     )
 
-    subject.next('This is the second message')
-    subject.next('This is the third message')
     observer2.unsubscribe();
 
     subject.next('This is the last message')
@@ -271,8 +272,8 @@ export class ObsCombined {
       () => addItem('Observer 1 Completed', 3)
     )
 
-    var i = 1;
-    var int = setInterval(() => subject.next(i++), 100);
+     var i:number = 1;
+    var int = setInterval(() => subject.next((i++).toString()), 100);
 
     setTimeout(() => {
       var observer2 = subject.subscribe(

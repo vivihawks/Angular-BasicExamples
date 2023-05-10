@@ -26,7 +26,7 @@ export class NgStyleComponent {
      big = false;
      back = false;
      bord = false;
-brighter;
+    brighter: boolean = false;
      get myStyles(): any {
         return {
             'font-size' : this.big ? '26px' : '14px',

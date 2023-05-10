@@ -13,7 +13,7 @@ import { Component } from "@angular/core";
         <div #div1>
             <h3 *ngIf="addToDom" >This heading is added to and removed from the DOM</h3>
         </div>
-        <p>Children: {{div1.children.length}}, content: '{{div1.children[0]?.innerText}}'</p>
+        <p>Children: {{div1.children.length}}, content: '{{$any(div1.children[0]).innerText}}'</p>
         <hr/>
 
         <p>
@@ -24,7 +24,7 @@ import { Component } from "@angular/core";
             <h3 [hidden]="hidden">This heading can be hidden but remains in the DOM</h3>
             <h3 [style.display]="hidden ? 'none' : 'block'">and this one too</h3>
         </div>
-        <p>Children: {{div2.children.length}}, content: '{{div2.children[0].innerText}}', '{{div2.children[1].innerText}}'</p>
+        <p>Children: {{div2.children.length}}, content: '{{$any(div2.children[0]).innerText}}', '{{$any(div2.children[1]).innerText}}'</p>
         <hr/>
         
         <p>
@@ -36,7 +36,7 @@ import { Component } from "@angular/core";
                 This heading remains in the DOM but the text is invisible
             </h3>
         </div>
-        <p>Children: {{div3.children.length}}, content: '{{div3.children[0].innerText}}'</p>`,
+        <p>Children: {{div3.children.length}}, content: '{{$any(div3.children[0]).innerText}}'</p>`,
     styles:["hr{  border:1px dotted yellow;}"]
 })
 export class ShowAndHideComponent {

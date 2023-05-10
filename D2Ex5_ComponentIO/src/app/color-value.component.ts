@@ -13,7 +13,7 @@ import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 })
 
 export class ColorValueComponent implements OnInit {
-    @Input() label: string;
+    @Input() label: string = "";
     @Input("init-value") initialValue: string = "0";
 
     @Output("value") colorValueEvent: EventEmitter<string> = new EventEmitter();

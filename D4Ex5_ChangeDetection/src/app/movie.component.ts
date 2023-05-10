@@ -28,8 +28,8 @@ OnPush will still trigger full Change Detection when
 */
 })
 export class MovieComponent {
-  @Input() title: string;
-  @Input() actor: Actor;
+  @Input() title: string = '';
+  @Input() actor: Actor = new Actor('','');
   //Watch how the docheck and onchanges LifecycleHooks are called based on the ChangeDetectionStrategy above
   ngDoCheck(){
     console.log("DoCheck called");

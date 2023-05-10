@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
       font-family: 'Helvetica', sans-serif;
       font-weight: 300;
       color:white;
-      background: purple;
+      background: black;
       margin: 1rem;
       display: inline-block;
     }

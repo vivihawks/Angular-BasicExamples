@@ -10,7 +10,7 @@ import {take, map, catchError,delay, timeout,concat} from 'rxjs/operators';
   pure: false
 })
 export class AnimateNumberPipe implements PipeTransform {
-  private currentNumber: number = null; // intermediary number //old value
+  private currentNumber: number = 0; // intermediary number //old value
   private targetNumber: number = 100;//new value
 
   transform(targetNumber: number): number {

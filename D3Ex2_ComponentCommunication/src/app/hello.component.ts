@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 	template: `<p [ngStyle]="{ 'color': color }">Hello, {{name}}!</p>`,
 })
 export class HelloComponent {
-  @Input() name: string;
+  @Input() name: string = '';
   color = 'black';
 
   constructor(@Optional() private parentComp:AppComponent, zone: NgZone ) {

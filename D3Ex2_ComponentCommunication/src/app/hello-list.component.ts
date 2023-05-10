@@ -16,8 +16,8 @@ import { HelloComponent } from './hello.component';
 	 </button>`
 })
 export class HelloListComponent {
-  @ContentChildren(HelloComponent) helloChildren: QueryList<HelloComponent>;
-  @ContentChild('last') lastChild: HelloComponent;
+  @ContentChildren(HelloComponent) helloChildren!: QueryList<HelloComponent>;
+  @ContentChild('last') lastChild!: HelloComponent;
 
   constructor() {}
   ngAfterContentInit() {
