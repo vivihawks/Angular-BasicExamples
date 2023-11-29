@@ -68,6 +68,13 @@ export class FormValidationComponent {
   constructor(fb: FormBuilder){
     this.complexForm = fb.group({
       'firstName' : [null, [Validators.required,this.hasPunctuation("!","exclamation")]],
+    /*   
+      [
+        1- Default Value
+        2- Synchronous Validators
+        3- Asynchronous Validators
+      ]
+    */
       'lastName': [null,  Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       'gender' : [null, Validators.required],
       'hiking' : [false],
