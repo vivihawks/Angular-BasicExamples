@@ -32,6 +32,19 @@ MyComponent(){
 
 //constructor
 /*
+Basic
+1. Constructor
+2. onChanges
+3. onInit
+4. afterContentInit
+5. afterViewInit
+6. onDestroy
+
+Advanced
+1. doCheck
+2. afterContentChecked
+3. afterViewChecked
+
 0. Constructor
 1. onChanges - I/O values are being initialized 
 2. onInit - Component Class is ready
