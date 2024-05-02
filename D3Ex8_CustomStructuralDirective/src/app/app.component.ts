@@ -5,10 +5,10 @@
   selector: 'app-root',
   template: `
   
+  <!-- Swap ng-container vs div below to see the difference in behavior and what is rendered-->
   <ng-container *ngTemplateOutlet="myTemplate">
   </ng-container>
   
-  <!-- Swap ng-container vs div below to see the difference in behavior and what is rendered-->
   <div *ngFor="let item of [1,2,3,4,5,6]">
      <app-card *appDelay="1000*item"><!--Container-->
        {{item}}<!--Template-->
