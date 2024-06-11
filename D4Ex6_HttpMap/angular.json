@@ -67,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "NFEx_Sample:build:production"
+              "buildTarget": "NFEx_Sample:build:production"
             },
             "development": {
-              "browserTarget": "NFEx_Sample:build:development"
+              "buildTarget": "NFEx_Sample:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NFEx_Sample:build"
+            "buildTarget": "NFEx_Sample:build"
           }
         },
         "test": {

@@ -3,5 +3,6 @@
         ".gitignore": true,
         ".vscode": true,
         "Archives/": true
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
