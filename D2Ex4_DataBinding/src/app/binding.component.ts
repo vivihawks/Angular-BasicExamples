@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
   <h1>Data Binding in Action</h1>
     <div>
       <h2>Interpolation</h2>
-        {{interpolatedValue}}
+        {{interpolatedVariable}}
       </div>
       <br/>
       <div>
@@ -27,10 +27,10 @@ import { environment } from '../environments/environment';
     <br/>
     <div >
       <h2>Two-way Binding</h2>
-      <input [(ngModel)]="dynamicValue" type="text"
+      <input [(ngModel)]="dynamicVariable" type="text"
                 placeholder="Watch the text update!"/>
       <br>
-      <span>{{dynamicValue}}</span>
+      <span>{{dynamicVariable}}</span>
     </div>
     <div >
     <h2>Template Local Variable a.k.a Aliases</h2>
@@ -58,9 +58,9 @@ import { environment } from '../environments/environment';
 
 export class BindingComponent {
   environmentValue : string = environment.currentEnvironment;
-  interpolatedValue : string = 'This is my Awesome Interpolated Value';
+  interpolatedVariable : string = 'This is my Awesome Interpolated Value';
   componentStyle: string = 'red';
-  dynamicValue: string = 'Winning!';
+  dynamicVariable: string = 'Winning!';
   
   constructor(){
     setTimeout( () => this.componentStyle = "green",2000);
@@ -77,7 +77,7 @@ export class BindingComponent {
   }
   alertTheWorld(): void {
   
-    this.dynamicValue = "Losing! Boo!!!"
+    this.dynamicVariable = "Losing! Boo!!!"
    this.componentStyle = 'orange';
     alert('I clicked the button!');
   }

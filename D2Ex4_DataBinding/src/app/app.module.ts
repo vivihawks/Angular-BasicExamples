@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {  provideHttpClient } from '@angular/common/http';
 import { BindingComponent } from './binding.component';
 import { AppComponent } from './app.component';
-import {FeatureModule1Module} from './feature-module1/feature-module1.module';
-import {FeatureModule2Module} from './feature-module2/feature-module2.module';
+import { FeatureModule1Module } from './feature-module1/feature-module1.module';
+import { FeatureModule2Module } from './feature-module2/feature-module2.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,10 @@ import {FeatureModule2Module} from './feature-module2/feature-module2.module';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-
-	FeatureModule1Module,
-	FeatureModule2Module //This import is only good for components in this module
+    FeatureModule1Module,
+    FeatureModule2Module //This import is only good for components in this module
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

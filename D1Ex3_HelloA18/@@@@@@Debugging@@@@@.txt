@@ -1,0 +1,1 @@
+use the settings as is from the launch.json(debugConfigBkp) file to enable debugging

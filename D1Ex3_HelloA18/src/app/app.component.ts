@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'NFEx_Sample';
+  greeting = 'Angular | Hello Angular!';
   y=0;
 
    test():void{

@@ -1,0 +1,20 @@
+1. Create an Angular project
+
+ng new HelloAngular --routing
+
+2. Serve the default app
+
+cd HelloAngular
+ng serve
+
+3. Create a new app within this project
+
+cd HelloAngular
+ng generate application app1 –-routing
+ng generate application app2 –-routing
+
+4. The above applications are in the projects folder
+
+5. Use the command below to start the app by the name app2 
+
+ng serve --o --project app2

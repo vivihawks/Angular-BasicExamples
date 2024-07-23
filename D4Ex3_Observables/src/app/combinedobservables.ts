@@ -1,10 +1,10 @@
 
-import {combineLatest as observableCombineLatest, of as observableOf,  AsyncSubject ,  ReplaySubject ,  BehaviorSubject ,  Subject ,  Observable } from 'rxjs';
+import { combineLatest as observableCombineLatest, of as observableOf, AsyncSubject, ReplaySubject, BehaviorSubject, Subject, Observable } from 'rxjs';
 
 import { share } from 'rxjs/operators';
 import { Component, ElementRef, ChangeDetectorRef, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Rx from 'rxjs';
-import { timer,pipe} from "rxjs";
+import { timer, pipe, map } from "rxjs";
 
 
 @Component({
@@ -39,70 +39,14 @@ import { timer,pipe} from "rxjs";
 export class ObsCombined {
 
   items: string[] = [];
+
   constructor() {
 
     ///////Example 5 //////////////////////////////////////////
     const Observable = Rx.Observable;
     let conference: {} = {};
     // Start: Take these data structures
-    const events = [
-      { id: 1, name: 'ngConf', speakers: [1, 2], sponsors: [1, 2] },
-      { id: 2, name: 'Angular Connect', speakers: [1, 2, 3], sponsors: [3, 4] },
-    ];
 
-    const users = [
-      { id: 1, name: 'Lukas' },
-      { id: 2, name: 'Jules' },
-      { id: 3, name: 'Jon' }
-    ];
-
-    const sponsors = [
-      { id: 1, name: 'Firebase' },
-      { id: 2, name: 'Ionic' },
-      { id: 3, name: 'Auth0' },
-      { id: 4, name: 'BackAnd' }
-    ];
-
-    const events$ = observableOf(events);
-    const users$ = observableOf(users);
-    const sponsors$ = observableOf(sponsors);
-
-    const conference$ = observableCombineLatest(
-      events$,
-      users$,
-      sponsors$,
-      (events, users, sponsors) => {
-        return events.map(event => {
-          var speakers = users.filter(user => event.speakers.indexOf(user.id) > -1);
-          var eventSponsors = sponsors.filter(sponsor => event.sponsors.indexOf(sponsor.id) > -1);
-          return Object.assign({}, event, { speakers: speakers, sponsors: eventSponsors });
-        });
-      })
-      .subscribe(
-        x => { console.log("Data Received - " + x) },
-        err => console.log(err),
-        () => console.log('complete')
-      );
-    // Finish: Create an observable that returns THIS structure
-    /*
-    [
-      {id: 1, name: 'ngConf', speakers: [
-        {id: 1, name: 'Lukas'},
-        {id: 2, name: 'Jules'}
-      ], sponsors: [
-        {id: 1, name: 'Firebase'},
-        {id: 2, name: 'Ionic'}
-      ]},
-      {id: 2, name: 'Angular Connect', speakers: [
-        {id: 1, name: 'Lukas'},
-        {id: 2, name: 'Jules'},
-        {id: 3, name: 'Jon'}
-      ], sponsors: [
-        {id: 3, name: 'Auth0'},
-        {id: 4, name: 'BackAnd'}
-      ]},
-    ]
-    */
 
     ///////Example 6 //////////////////////////////////////////
 
@@ -131,25 +75,25 @@ export class ObsCombined {
     //Timer 2 - 0 1 1 1 2 2 
     //Timer 3 - 0 0 1 1 1 2
 
-    const subs = observableCombineLatest(
-        timerOne,
-        timerTwo,
-        timerThree      ).subscribe(latestValues => {
-      //grab latest emitted values for timers one, two, and three
-      const [timerValOne, timerValTwo, timerValThree] = latestValues;
-      /*
-        Example:
-        timerOne first tick: 'Timer One Latest: 1, Timer Two Latest:0, Timer Three Latest: 0
-        timerTwo first tick: 'Timer One Latest: 1, Timer Two Latest:1, Timer Three Latest: 0
-        timerThree first tick: 'Timer One Latest: 1, Timer Two Latest:1, Timer Three Latest: 1
-      */
-      console.log(
-        `Timer One Latest: ${timerValOne}, 
+    const subs = observableCombineLatest([
+      timerOne,
+      timerTwo,
+      timerThree]).subscribe(latestValues => {
+        //grab latest emitted values for timers one, two, and three
+        const [timerValOne, timerValTwo, timerValThree] = latestValues;
+        /*
+          Example:
+          timerOne first tick: 'Timer One Latest: 1, Timer Two Latest:0, Timer Three Latest: 0
+          timerTwo first tick: 'Timer One Latest: 1, Timer Two Latest:1, Timer Three Latest: 0
+          timerThree first tick: 'Timer One Latest: 1, Timer Two Latest:1, Timer Three Latest: 1
+        */
+        console.log(
+          `Timer One Latest: ${timerValOne}, 
      Timer Two Latest: ${timerValTwo}, 
      Timer Three Latest: ${timerValThree}`
-      );
-    });
-//Increase the unsubscribe timeout to see output in the console
+        );
+      });
+    //Increase the unsubscribe timeout to see output in the console
     setTimeout(() => subs.unsubscribe(), 20)
   }
 
@@ -159,7 +103,7 @@ export class ObsCombined {
     /*  Of   FromEventPattern    FromEvent    FromPromise    Interval
     Range    Timer    Empty    Throw    Never*/
 
-    var observable = Observable.create((observer: any) => {
+    var observable = new Observable((observer: any) => {
       try {
         observer.next('Example 7')
         observer.next('Starting Up.')
@@ -179,15 +123,15 @@ export class ObsCombined {
       //Hot observables are like singletons. They are not copied for each subscriber. 
       //There is only one stream that is shared by multiple subcribers
       .pipe(share())
-    let subscription = observable.subscribe(
-      (val:any) => { this.items.push(val) },
-      (err:any) => { this.items.push("Ah! snap!! something blew up "); this.items.push(err) },
-      (done:any) => { this.items.push("Bye!! "); this.items.push(done) }
-    );
+    let subscription = observable.subscribe({
+      next: (val: any) => { this.items.push(val) },
+      error: (err: any) => { this.items.push("Ah! snap!! something blew up "); this.items.push(err) },
+      complete: () => { this.items.push("Bye!! "); }
+    });
     //This is how you unsubscribe
     setTimeout(() => { subscription.unsubscribe() }, 3000)
 
-    var subscription2 = observable.subscribe((data:any) => this.items.push("**Second Subscriber** - " + data))
+    var subscription2 = observable.subscribe((data: any) => this.items.push("**Second Subscriber** - " + data))
 
     //If you want subscribtions to be linked up and cancel the child if the parent unsubscribes
     //subscription.add(subscription2);
@@ -202,7 +146,7 @@ export class ObsCombined {
     }
 
     ///////Example 8  Subjects//////////////////////////////////////////
-    var subject = new Subject<string>(); 
+    var subject = new Subject<string>();
 
     var observer1 = subject.subscribe(
       data => addItem('Observer 1: ' + data, 1),
@@ -225,11 +169,11 @@ export class ObsCombined {
     ///////Example 9  Behavior Subjects//////////////////////////////////////////
 
     subject = new BehaviorSubject('Default initial Message for Behavior Subject')
-    subject.subscribe(
-      data => addItem('Observer 1: ' + data, 2),
-      err => addItem(err, 2),
-      () => addItem('Observer 1 Completed', 2)
-    )
+    subject.subscribe({
+      next: data => addItem('Observer 1: ' + data, 2),
+      error: err => addItem(err, 2),
+      complete: () => addItem('Observer 1 Completed', 2)
+  })
     subject.next('This is the first message')
     subject.next('This message will be caught by Observer 2 as well')
 
@@ -272,7 +216,7 @@ export class ObsCombined {
       () => addItem('Observer 1 Completed', 3)
     )
 
-     var i:number = 1;
+    var i: number = 1;
     var int = setInterval(() => subject.next((i++).toString()), 100);
 
     setTimeout(() => {
@@ -301,7 +245,7 @@ export class ObsCombined {
     subject2.next('This is the second message')
     subject2.next('This is the third message')
 
-    subject2.next('This is the last message')   
+    subject2.next('This is the last message')
   }
 
 }

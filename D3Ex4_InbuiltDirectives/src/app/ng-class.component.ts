@@ -41,7 +41,7 @@ you able to apply only one class (of course you can use class. a few times but i
         .box { max-width: 400px; padding: 5px; }
         .big { font-size: 26px; }
         .dull { background-color: Beige; }
-        .bright { color: red; background-color: Pink; }
+        .bright { color: red; background-color: Yellow; }
         .border { border: 1px solid Red; }`
     ]
 })

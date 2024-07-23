@@ -122,11 +122,11 @@ export class App implements OnInit {
     })
     // .publish();
 
-    let subscription = this.data.subscribe(
-      value => this.values.push(value),
-      error => this.anyErrors = true,
-      () => this.finished = true
-    );
+    let subscription = this.data.subscribe({
+      next: value => this.values.push(value),
+      error: error => this.anyErrors = true,
+      complete: () => this.finished = true
+  });
 
     setTimeout(() => this.data.subscribe(
       value => this.values.unshift(value * 2)
@@ -144,10 +144,10 @@ export class App implements OnInit {
     from([{ price: 1 }, { price: 2 }, { price: 3 }, { price: 4 }, { price: 5 }])
       .pipe(
         map(item => {
-           return { price: item.price * 2 };
-         }
+          return { price: item.price * 2 };
+        }
         )
-    )
+      )
 
       //new Promise().then().then().then()
 
@@ -156,20 +156,20 @@ export class App implements OnInit {
     //Example 3 : Observable Error Handling
     var source = //Rx.Observable
       of("42", "43", "45", "Last Number")
-      .pipe(
-        // This will complete in 5 seconds
-        delay(3000)
-        // // We will override this to throw an error in 1 second
-         , timeout(1000)
-        // // Uncomment this to catch the error and continue the stream
-         , catchError(() => of('Recovering!'))
-      );
+        .pipe(
+          // This will complete in 5 seconds
+          delay(3000)
+          // We will override this to throw an error in 1 second
+          , timeout(1000)
+          // Uncomment this to catch the error and continue the stream
+          , catchError(() => of('Recovering!'))
+        );
 
-    var subscription = source.subscribe(
-      x => this.nextMessage = x, // onNext handler
-      err => this.errorMessage = err, // onError handler
-      () => this.completedMessage = 'Completed' // onComplete handler
-    );
+    var subscription = source.subscribe({
+      next: x => this.nextMessage = x, // onNext handler
+      error: err => this.errorMessage = err, // onError handler
+      complete: () => this.completedMessage = 'Completed' // onComplete handler
+    });
   }
 
 
@@ -182,19 +182,19 @@ export class App implements OnInit {
       debounceTime(200)
       , map(evt => { return { x: evt.clientX, y: evt.clientY }; })
     )
-      .subscribe(
-        coordinate => {
+      .subscribe({
+        next: coordinate => {
           this.coordinates.unshift(coordinate);
-          //this.detectorRef.detectChanges();
+          this.detectorRef.detectChanges();
         },
-        err => console.log('4a. Error:', err),
-        () => console.log('4a. Completed')
-      );
+        error: err => console.log('4a. Error:', err),
+        complete: () => console.log('4a. Completed')
+      });
 
     //4b - Filter
     console.log('Example 4b. Filter')
-    
-    const predicate = (n: number) => n <= 2; 
+
+    const predicate = (n: number) => n <= 2;
     //(n: number) => n <= 2; 
     /*
      function(n:number){
@@ -202,12 +202,12 @@ export class App implements OnInit {
      }
     */
 
-    
-      of(1, 2, 3, 4, 5)
+
+    of(1, 2, 3, 4, 5)
       .pipe(
-          filter(predicate)
+        filter(predicate)
       )
-      // .subscribe(console.log);
+     .subscribe(console.log);
     // will log 1,2
 
 
@@ -218,54 +218,54 @@ export class App implements OnInit {
       .pipe(
         distinctUntilChanged()
       )
-     .subscribe(console.log);
+      .subscribe(console.log);
 
     //4d - Debounce Time(Take the latest from the given time window)
     console.log('Example 4d. Debounce Time')
-    interval(100) 
-    .pipe(
-         take(10),
-         filter(Boolean),
-         distinctUntilChanged(),
-        debounceTime(1000)
-    )
-   // .subscribe(console.log);
+    interval(100)
+      .pipe(
+        take(1000),//take x entries
+        // filter(Boolean),
+        // distinctUntilChanged(),
+        debounceTime(200)//take latest in every x ms
+      )
+     //.subscribe(x => console.log(`Example 4d - ${x}`));
     //console.clear();
 
     //4e - Throttle Time(Take the first from the given time window)
     console.log('Example 4e. Throttle Time')
     interval(100)
-    .pipe(
+      .pipe(
         //alternates for unsubscribe();
         take(100),
         filter(Boolean),
         distinctUntilChanged(),
         throttleTime(1000)
-    )
-    .subscribe(console.log);
+      )
+    //  .subscribe(console.log);
 
     //4f - TakeUntil and TakeWhile alternates for unsubscribe
     console.log('Example 4f. TakeUntil and TakeWhile - alternates for unsubscribe')
     interval(100)
-    .pipe(
+      .pipe(
         //Comment one of the below and inspect the console
         takeUntil(of(0).pipe(delay(2000))),
         // takeWhile(i=> i<25),
-        map(n => "Example 4f ->"+ n),
+        map(n => "Example 4f ->" + n),
 
-    )
-//    .subscribe(console.log);
+      )
+    //    .subscribe(console.log);
 
     //4g - BufferTime - Batch entries before streaming
     console.log('Example 4g. BufferTime - Batch entries before streaming')
     interval(500)
-    .pipe(
+      .pipe(
         bufferTime(3000),
         // takeWhile(i=> i<25),
-        map(n => "Example 4g ->"+ n),
+        map(n => "Example 4g ->" + n),
 
-    )
-   // .subscribe(console.log);
+      )
+     .subscribe(console.log);
 
-    }
+  }
 }

@@ -1,8 +1,8 @@
 export class RedGreenBlue {
 
-    public red: number = 0;
-    public green: number = 0;
-    public blue: number = 0;
+    public red: string = "0";
+    public green: string = "0";
+    public blue: string = "0";
 
 
    //public style: string;

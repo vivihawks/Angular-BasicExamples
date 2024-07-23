@@ -4,5 +4,9 @@
         ".vscode": true,
         "Archives/": true
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "eslint.format.enable": true,
+    
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true
+
 }
