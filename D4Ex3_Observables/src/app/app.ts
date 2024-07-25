@@ -1,7 +1,7 @@
 
 import { fromEvent, fromEvent as observableFromEvent, interval, Observable } from 'rxjs';
 
-import { bufferTime, debounceTime, distinctUntilChanged, filter, take, takeUntil, takeWhile, throttleTime } from 'rxjs/operators';
+import { bufferTime, debounceTime, distinctUntilChanged, filter, share, take, takeUntil, takeWhile, throttleTime } from 'rxjs/operators';
 import { Component, ElementRef, ChangeDetectorRef, OnInit, ViewEncapsulation } from '@angular/core';
 import * as Rx from 'rxjs';
 
@@ -91,6 +91,11 @@ export class App implements OnInit {
     //Observables are  triggered by a  subscriber subscribing to them
     //Observables start separately as copies for each subscriber.
     //Example 1 : Basic Observable - This is a COLD Observable
+
+    //Observable  --->    Subscriber
+    //next        
+    //error
+    //complete
     this.data = new Observable<number>((observer: any) => {
 
       //1. Server call - Authorize user
@@ -120,13 +125,15 @@ export class App implements OnInit {
         observer.next(100);
       }, 5000);
     })
-    // .publish();
+    //*** Hot Observable *** Enable the below statement and notice the difference in behavior
+    // .pipe(share());
 
     let subscription = this.data.subscribe({
       next: value => this.values.push(value),
       error: error => this.anyErrors = true,
       complete: () => this.finished = true
-  });
+    });
+    //subscription.unsubscribe();
 
     setTimeout(() => this.data.subscribe(
       value => this.values.unshift(value * 2)
@@ -143,21 +150,17 @@ export class App implements OnInit {
     //Observable
     from([{ price: 1 }, { price: 2 }, { price: 3 }, { price: 4 }, { price: 5 }])
       .pipe(
-        map(item => {
-          return { price: item.price * 2 };
-        }
-        )
+        map(item => {return { price: item.price * 2}})
       )
-
+      .subscribe(item => this.items.unshift(item));
       //new Promise().then().then().then()
 
-      .subscribe(item => this.items.unshift(item));
-
     //Example 3 : Observable Error Handling
-    var source = //Rx.Observable
+    var source = 
+      //Observable
       of("42", "43", "45", "Last Number")
         .pipe(
-          // This will complete in 5 seconds
+          // This will cause an initial delay of 3 secs
           delay(3000)
           // We will override this to throw an error in 1 second
           , timeout(1000)
@@ -207,7 +210,7 @@ export class App implements OnInit {
       .pipe(
         filter(predicate)
       )
-     .subscribe(console.log);
+      .subscribe(console.log);
     // will log 1,2
 
 
@@ -229,7 +232,7 @@ export class App implements OnInit {
         // distinctUntilChanged(),
         debounceTime(200)//take latest in every x ms
       )
-     //.subscribe(x => console.log(`Example 4d - ${x}`));
+    //.subscribe(x => console.log(`Example 4d - ${x}`));
     //console.clear();
 
     //4e - Throttle Time(Take the first from the given time window)
@@ -265,7 +268,7 @@ export class App implements OnInit {
         map(n => "Example 4g ->" + n),
 
       )
-     .subscribe(console.log);
+      .subscribe(console.log);
 
   }
 }

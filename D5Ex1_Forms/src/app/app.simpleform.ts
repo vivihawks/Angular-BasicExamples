@@ -50,7 +50,7 @@ import { Component } from '@angular/core';
 })
 export class SimpleFormComponent {
   submitForm(form: any): void{
-    console.log('Form Data: ');
+    console.log(`Form Data:`);
     console.log(form);
   }
 }

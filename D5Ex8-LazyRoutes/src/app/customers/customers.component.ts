@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyTestService } from '../my-test.service';
 
 @Component({
   selector: 'app-customers',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected myService: MyTestService) { }
 
   ngOnInit() {
   }

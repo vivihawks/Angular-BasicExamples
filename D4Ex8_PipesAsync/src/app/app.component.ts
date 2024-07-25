@@ -33,7 +33,7 @@ export class AppComponent {
   //The below line or the async pipe, to read data from fetchPrice
   //.then((data)=> this.fetchPrice = data );
 
-  seconds = of(0).pipe(concat(interval(1000)));//.subscribe(()=>{});
+  seconds = of(0).pipe(Rx.concatWith(interval(1000)));//.subscribe(()=>{});
   pageViews = 100;
 
   constructor() {

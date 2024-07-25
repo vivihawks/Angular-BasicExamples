@@ -1,7 +1,14 @@
 import { CharacterService } from './character.service';
 import { Item } from './items';
 import { Injectable } from '@angular/core';
-// @Injectable()
+
+
+
+// Provider Scopes
+//~~~~~~~~~~~~~~~~
+// root     : Provide this service at the root module level
+// platform : Used when multiple Angular apps co-exist in a single page. This scope ensures singleton nature of the service across all the Angular apps in that page
+// any      : One common instance for all eagerly loaded modules and one instance each for every lazy loaded module
 @Injectable({providedIn : 'root'})
 export class MyService {
 

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 import { ObsCombined } from './combinedobservables';
 import { App } from './app';
@@ -13,10 +13,9 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [App]
 })
 export class AppModule { }

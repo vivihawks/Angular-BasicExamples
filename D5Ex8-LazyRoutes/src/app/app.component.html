@@ -7,4 +7,8 @@
 <button routerLink="">Home</button>
 
 <router-outlet></router-outlet>
-
+<br>
+<br>
+<br>
+<h3>Change the providedIn decorator attribute to any | root in MyTestService to see how the counters are shared</h3>
+<input type="button" name="Increment" (click)="myService.increment()" value="App Component's Service Counter : {{myService.getCounter()}}">

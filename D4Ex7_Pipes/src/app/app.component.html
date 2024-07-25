@@ -3,7 +3,7 @@
     <div class="rendered" flex layout="column">
       <p><strong>Date:</strong> {{today | date}}</p>
       <p><strong>Capitalization:</strong> {{name | uppercase}}</p>
-      <p><strong>Currency:</strong> {{randomNumber | currency:'USD':false }}</p>
+      <p><strong>Currency:</strong> {{randomNumber | currency:'INR':true }}</p>
       <p><strong>Percent:</strong> {{randomNumber | percent}}</p>
       <p><strong>Decimal:</strong> {{randomNumber | number:'2.0-1'}}</p>
       <pre>{{items | slice:0:2| json }}</pre>

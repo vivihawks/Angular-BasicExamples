@@ -26,6 +26,7 @@ export class App implements OnInit {
   constructor(private service: MyService, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
+    
 //    this.service.getItems()
 //      .subscribe(data => {
 //        this.items = data;
@@ -37,9 +38,8 @@ export class App implements OnInit {
     this.service.getItems()
       .then(
           (result:any) => {
-            this.items = result;
+            this.items = result.items;
             console.log(this.items);
-
             return "Output from First Then";
          }, 
           (error) => {

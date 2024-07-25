@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({providedIn:'root'})
 export class CharacterService {
   countCharacters(item:string) {
     return Object.keys(item)

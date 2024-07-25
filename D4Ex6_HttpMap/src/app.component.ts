@@ -7,7 +7,7 @@ import {
 import { SearchService } from './services/search.service';
 
 
-import { debounceTime } from 'rxjs/operators';
+import { debounceTime, flatMap, mergeMap, retry } from 'rxjs/operators';
 import * as Rx from 'rxjs';
 
 import { from, of } from "rxjs";
@@ -42,10 +42,11 @@ export class AppComponent {
 		this.coolForm = fb.group({ search: this.searchField });
 
 		this.searchField.valueChanges.pipe(
-			debounceTime(400)
+			debounceTime(500)
 			//Toggle one of flat or switch map below
-			, switchMap(term => this.searchService.search(term))
-			//.flatMap(term => this.searchService.search(term))
+			// , switchMap(term => this.searchService.search(term))
+			,mergeMap(term => this.searchService.search(term))
+			,retry()
 		)
 			.subscribe(result => {
 				//this.result = result.artists.items
