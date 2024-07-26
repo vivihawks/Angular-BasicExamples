@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'form-validation',
-  template : `
+  template: `
   <div class="jumbotron">
     <h2>Form with Validations</h2>
     <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
@@ -63,38 +63,38 @@ import {FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
   `
 })
 export class FormValidationComponent {
-  complexForm : FormGroup;
-  formSubmitted:boolean = false;
-  constructor(fb: FormBuilder){
+  complexForm: FormGroup;
+  formSubmitted: boolean = false;
+  constructor(fb: FormBuilder) {
     this.complexForm = fb.group({
-      'firstName' : [null, [Validators.required,this.hasPunctuation("!","exclamation")]],
-    /*   
-      [
-        1- Default Value
-        2- Synchronous Validators
-        3- Asynchronous Validators
-      ]
-    */
-      'lastName': [null,  Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
-      'gender' : [null, Validators.required],
-      'hiking' : [false],
-      'running' : [false],
-      'swimming' : [false]
+      'firstName': [null, [Validators.required, this.hasPunctuation("!", "exclamation")]],
+      /*   
+        [
+          1- Default Value
+          2- Synchronous Validators
+          3- Asynchronous Validators
+        ]
+      */
+      'lastName': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
+      'gender': [null, Validators.required],
+      'hiking': [false],
+      'running': [false],
+      'swimming': [false]
     })
     console.log(this.complexForm);
-    this.complexForm.valueChanges.subscribe( (form: any) => {
+    this.complexForm.valueChanges.subscribe((form: any) => {
       console.log('form changed to:', form);
     }
     );
   }
 
- hasPunctuation(punctuation: string, errorType: string) {
-  return function(input: FormControl) {
-    return (input == null || input.value == null ? null : input.value.indexOf(punctuation) >= 0 ) ?
-    { [errorType]: true }: null ;
-  };
-}
-  submitForm(value: any){
+  hasPunctuation(punctuation: string, errorType: string) {
+    return function (input: FormControl) {
+      return (input == null || input.value == null ? null : input.value.indexOf(punctuation) >= 0) ?
+        { [errorType]: true } : null;
+    };
+  }
+  submitForm(value: any) {
     this.formSubmitted = true;
     console.log(value);
   }

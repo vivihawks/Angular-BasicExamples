@@ -40,8 +40,8 @@ export class ParentComponent implements OnInit, OnChanges, AfterContentInit, Aft
   
   Advanced
   1. doCheck
-  2. afterContentChecked
-  3. afterViewChecked
+  2. afterContentChecked(eg. User events on a text box in the content)
+  3. afterViewChecked(eg. User events on a text box in the view)
   
   0. Constructor
   1. onChanges - @Input values are being initialized 

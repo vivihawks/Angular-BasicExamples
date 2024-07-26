@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app',
   template: `
     <nav>
-      <a [routerLink]="['/component-a']" style="margin-right:10px;">Component One</a> 
+      <a routerLink="/component-a" style="margin-right:10px;">Component One</a> 
       <a [routerLink]="['/component-b', 123]">Component Two (id: 123)</a>
     </nav>
 
@@ -29,10 +29,10 @@ import { Router } from '@angular/router';
   `
 })
 export class AppComponent {
-  
-  constructor (private router: Router) {}
-  
-  onClick () {
+
+  constructor(private router: Router) { }
+
+  onClick() {
     this.router.navigate(['/component-b', 456]);
   }
 }
