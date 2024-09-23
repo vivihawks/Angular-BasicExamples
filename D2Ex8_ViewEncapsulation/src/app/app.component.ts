@@ -14,7 +14,7 @@ import { AttributesService } from './attributes.service';
       <div class="org"> 
         <my-component></my-component>
       </div>
-<!--      <video></video> -->
+ <video></video> 
   `,
   styles: [`
     h1, div {

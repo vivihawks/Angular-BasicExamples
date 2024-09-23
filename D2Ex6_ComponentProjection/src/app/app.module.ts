@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ChildSelectComponent } from './child-select.component';
+import { ChildComponent } from './child.component';
 
 @NgModule({
   imports: [BrowserModule],
   declarations: [
     AppComponent,
-    ChildSelectComponent
+    ChildComponent
   ],
   exports: [AppComponent],
   bootstrap: [AppComponent]

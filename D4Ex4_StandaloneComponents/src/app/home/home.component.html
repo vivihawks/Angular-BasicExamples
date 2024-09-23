@@ -1,0 +1,26 @@
+
+<div *ngIf="!showInfo" class="row">
+<div class="row">
+    <form class="form" [formGroup]="info">
+        <input class="form-control form-control-lg" formControlName="name" type="text" placeholder="Enter a name" />
+    </form>
+</div>
+<br/>
+<br/>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <button (click)="fetchInfo()" [disabled]="info.invalid" class="btn btn-lg btn-info">Info Using Routing </button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-lg btn-danger" [disabled]="info.invalid" (click)="loadInfo()" >Info Using Dynamic Component</button>
+    </div>
+    <div class="col-md-2">
+        
+    </div>
+</div>
+</div>
+
+<div   #loadinfo class="row">
+    
+</div>

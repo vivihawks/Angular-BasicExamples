@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CustomersComponent } from './customers/customers.component';
 
 
 const routes: Routes = [
   {
     path: 'customers', //http://host:port/app/customers
-    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+    // component: CustomersComponent, ::: Eager Load
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) // ::: Lazy Load
     
   },
   {

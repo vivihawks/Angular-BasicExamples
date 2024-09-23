@@ -1,0 +1,18 @@
+
+
+			
+
+						    Directive
+
+								|
+	____________________________________________________________________________________________
+
+	|						                                            	|					|
+
+Component(Preset Template + Model)			                    Attribute Directive		Structural Directive
+
+							                                            	|					|
+								                                            ---------------------
+										                                            	|	
+
+									                                        Host Template(Not PRESET)

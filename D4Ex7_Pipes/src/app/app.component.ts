@@ -29,5 +29,5 @@ export class AppComponent {
 
 }
 
-interface Item { name: string; description: string; }
+export interface Item { name: string; description: string; }
 

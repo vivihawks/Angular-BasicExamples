@@ -1,0 +1,19 @@
+<div class="row" *ngIf="!info">
+    <h2>Fetching your Info</h2>
+</div>
+<div class="row" *ngIf="info">
+    <div class="col-md-6">
+       <img class="mg-fluid" *ngIf="info?.gender=='male'" [style.height.px]="imgHeight" [style.width.px]="imgWidth" src="../../assets/male.jpeg" />
+       <img class="mg-fluid" *ngIf="info?.gender=='female'" [style.height.px]="imgHeight" [style.width.px]="imgWidth" src="../../assets/female.jpg" />
+    </div>
+    <div class="col-md-4">
+       <p>Hey <span style="color: red">{{info.name}}</span>  we have scanned through <span style="color:blue">{{info.count}}</span>  records to guess your gender 
+        <br/>
+        your name suggets you are a <span style="color:orange"> {{info.gender}}</span>  and probablity of that is <span style="color:darkcyan"> {{info.probability}}</span> 
+       </p>
+       <button class="btn btn-warning" (click)="tryAgain()" >Try again</button>
+    </div>
+    <div class="col-md-1">
+        
+    </div>
+</div>

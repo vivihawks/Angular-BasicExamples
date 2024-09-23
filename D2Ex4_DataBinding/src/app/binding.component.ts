@@ -78,7 +78,7 @@ export class BindingComponent {
   alertTheWorld(): void {
   
     this.dynamicVariable = "Losing! Boo!!!"
-   this.componentStyle = 'orange';
+    this.componentStyle = 'orange';
     alert('I clicked the button!');
   }
 }

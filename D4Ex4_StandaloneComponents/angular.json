@@ -37,7 +37,7 @@
             "browser": "src/main.ts"
           },
           "configurations": {
-            "local": {
+            "production": {
               "budgets": [
                 {
                   "type": "initial",
@@ -52,47 +52,26 @@
               ],
               "outputHashing": "all"
             },
-            "uat": {
+            "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.uat.ts"
-                }
-              ]
-            },
-            "prod": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "namedChunks": true
             }
           },
-          "defaultConfiguration": "local"
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "prod": {
-              "buildTarget": "NFEx_Sample:build:prod"
+            "production": {
+              "buildTarget": "NFEx_Sample:build:production"
             },
-            "uat": {
-              "buildTarget": "NFEx_Sample:build:uat"
-            },
-            "local": {
-              "buildTarget": "NFEx_Sample:build:local"
+            "development": {
+              "buildTarget": "NFEx_Sample:build:development"
             }
           },
-          "defaultConfiguration": "local"
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

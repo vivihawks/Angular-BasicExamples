@@ -24,13 +24,13 @@ import { AttributesService } from './attributes.service';
   //None = Styles defined in this component are defined at the global dom level. This makes them available
   //to the entire document and all other components. These will be injected as style in the <head> element 
   //of the index.html
-  , encapsulation: ViewEncapsulation.Emulated // Try "Emulated"(Default),"ShadowDom" and "None" as well
+  , encapsulation: ViewEncapsulation.None // Try "Emulated","ShadowDom" and "None" as well
 
 
   //:host-context styles are configurable by the caller. Refer app-component html
   , styles: [`
     h1, div, pre {
-      color: red;
+      color: orange;
     }
     :host-context(.org) .hCont {
       color:orange;

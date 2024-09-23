@@ -14,16 +14,20 @@
 		let cde = [ 'c', 'd', 'e' ];
 		let scale = [ 'a', 'b', ...cde, 'f', 'g' ]; 
 		// let scale = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-		let mapABC = {
-			a : 5,
-			b : 6,
-			c : 3
-		};
-		function abc(map){
-			let xyz ={...map, x:100}
+
+		function abc(){
+			let map = {
+				a : 5,
+				b : 6,
+				c : 3
+			};
+			let xyz ={
+				...map, 
+				x:100
+			}
 //			let xyz ={a:5,b:6,c:3, x:100}
 		}
-		abc(mapABC);
+		abc();
 
 		//Rest Usage
 		function addSimple(a, b) {

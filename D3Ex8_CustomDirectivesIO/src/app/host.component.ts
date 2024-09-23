@@ -11,7 +11,7 @@ import { Component, OnInit } from "@angular/core";
             bind-param2="'Param2'"
             bind-param-3="'Param3'"
             (event)="directiveOutput = $event">
-            {{directiveOutput}}
+            Initial Directive Content
         </h3>
 
         <p style="color:red; cursor:pointer;font-weight:bold;color:purple;font-size:15pt;" (myClicker)="clickerContent=$event">{{clickerContent}}</p>`
