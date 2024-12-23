@@ -12,10 +12,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
      <br>
      <br>
      <parent-component *ngIf="showMyComponent" [counter]="counter" name="{{'Test' + counter}}" >
-      <child-component [message]="counter.toString()"></child-component>
+        <child-component [message]="counter.toString()"></child-component>
      </parent-component>
-
-
      </div>
   `,
   styles: [`

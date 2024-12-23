@@ -40,7 +40,8 @@ export class AppComponent {
 
   ngAfterViewInit() {
     this.alertsArr = this.alerts.toArray();
-    this.status.nativeElement.style.color = "red"
+    setTimeout( () => this.status.nativeElement.style.color = "red",2000);
+    setTimeout( () => this.status.nativeElement.style.display = "none",5000);
     this.status.nativeElement.innerHTML = this.text;
   }
   //1 = index 0

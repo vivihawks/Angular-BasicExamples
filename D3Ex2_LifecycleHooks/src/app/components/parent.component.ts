@@ -28,7 +28,6 @@ export class ParentComponent implements OnInit, OnChanges, AfterContentInit, Aft
   @Input()
   name: String = "";
   hooks: Array<string> = [];
-  //constructor
   /*
   Basic
   1. Constructor
@@ -60,6 +59,8 @@ export class ParentComponent implements OnInit, OnChanges, AfterContentInit, Aft
   
   *** TEASER >>> Compare the order in which messages are shown in the UI vs Console. Reason why?
   */
+
+  //constructor
   @ViewChild("ref1") ref1!: ElementRef;
   constructor() {
     this.hooks.push('Constructor ');
@@ -76,9 +77,9 @@ export class ParentComponent implements OnInit, OnChanges, AfterContentInit, Aft
     this.hooks.push('ngOnInit');
     console.log(" >>> ParentComponent ***onInit*** Called")
     console.log(" >>> ParentComponent ***onInit*** Trying to access a view element")
-    try{
+    try {
       console.log(this.ref1.nativeElement);
-    }catch(e){
+    } catch (e) {
       console.error(" >>> ParentComponent ***onInit*** Caught error trying to access the view element")
     }
 

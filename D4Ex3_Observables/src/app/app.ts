@@ -93,7 +93,7 @@ export class App implements OnInit {
     //Example 1 : Basic Observable - This is a COLD Observable
 
     //Observable  --->    Subscriber
-    //next        
+    //next
     //error
     //complete
     this.data = new Observable<number>((observer: any) => {

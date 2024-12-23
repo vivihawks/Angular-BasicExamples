@@ -6,7 +6,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
   template: `
   <div class="jumbotron">
     <h2>Form with Validations</h2>
-    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+    <form [formGroup]="complexForm" (ngSubmit)="submitForm()">
 
 
       <div class="form-group" [ngClass]=" {'has-error':complexForm.controls['firstName'].invalid && complexForm.controls['firstName'].touched}">
@@ -94,8 +94,8 @@ export class FormValidationComponent {
         { [errorType]: true } : null;
     };
   }
-  submitForm(value: any) {
+  submitForm() {
     this.formSubmitted = true;
-    console.log(value);
+    console.log(this.complexForm.value);
   }
 }

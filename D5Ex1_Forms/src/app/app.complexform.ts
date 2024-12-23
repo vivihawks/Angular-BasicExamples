@@ -23,10 +23,8 @@ export class ComplexFormComponent implements AfterViewChecked{
     })
   }
 
-  submitForm(value: any){
-    //this.complexForm.value;
+  submitForm(){
     console.log('Reactive Form Data: ')
-    console.log(value);
     console.log(this.complexForm.value);
   }
   log(){

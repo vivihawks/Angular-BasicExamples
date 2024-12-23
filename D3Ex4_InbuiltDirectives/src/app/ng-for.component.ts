@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
     template: `
         <h2>ngFor</h2>
 
+        <!--
+        <template [ngFor]...
+        -->
         <div *ngFor="let person of people; let isOdd=odd">
             <span [class.highlight]="isOdd">{{person.name.forename}} {{person.name.surname}}</span>
         </div>

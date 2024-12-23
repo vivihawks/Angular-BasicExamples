@@ -5,7 +5,7 @@ import ActivateGuard from './activate-guard';
   selector: 'app',
   template: `
     <nav>
-      <a [routerLink]="['component-one']">Component One</a>
+      <a style='padding-right: .5%' [routerLink]="['component-one']">Component One</a>
       <a [routerLink]="['component-two']">Guarded Component Two</a>
     </nav>
     

@@ -16,8 +16,9 @@ import { Component } from '@angular/core';
 		
         <div *ngIf="show; then thenBlock else elseBlock">
 		</div>
-		
+       
         <!-- ng-template is new as of A6 -->
+		<ng-template> Vignesh </ng-template>
         <ng-template #thenBlock>
 		    If Block showing up
             <p>
