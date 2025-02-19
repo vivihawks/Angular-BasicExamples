@@ -16,7 +16,15 @@ import { Component } from '@angular/core';
         
         <span *ngFor="let item of forLoopArray(15); let i=index; let last=last">
             <span>{{i+1}}{{last ? '' : ','}}</span>
-        </span>`,
+        </span>
+        <hr>
+        <h2>In-built Control Flow - For</h2>
+        @for(person of people; track person){
+            <span [class.highlight]="$odd">{{$last}} {{$index+1}} {{person.name.forename}} {{person.name.surname}} </span><br>
+        } @empty{
+         <span>No persons found</span>
+        }
+        `,
     styles: ['.highlight {background-color: Lavender }']
 })
 export class NgForComponent {

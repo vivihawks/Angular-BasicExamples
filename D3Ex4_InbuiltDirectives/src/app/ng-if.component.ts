@@ -31,6 +31,15 @@ import { Component } from '@angular/core';
 
 		<ng-template #elseBlock> Else Block Showing up </ng-template>
         <br>
+
+        <hr>
+        <h2>In-built Control Flow - If</h2>
+        @if(show){
+            If Block - True Condition
+        }
+        @else{
+            Else Block - False Condition
+        }        
         `
 })
 export class NgIfComponent {
