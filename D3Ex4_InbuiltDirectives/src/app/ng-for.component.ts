@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
         <h2>ngFor</h2>
 
         <!--
-        <template [ngFor]...
+        <ng-template [ngFor]...
+            <div...
         -->
         <div *ngFor="let person of people; let isOdd=odd">
-            <span [class.highlight]="isOdd">{{person.name.forename}} {{person.name.surname}}</span>
+            <span [class.highlight]="isOdd">{{person.name.firstname}} {{person.name.lastname}}</span>
         </div>
         
         <h3>For Loop</h3>
@@ -20,19 +21,19 @@ import { Component } from '@angular/core';
         <hr>
         <h2>In-built Control Flow - For</h2>
         @for(person of people; track person){
-            <span [class.highlight]="$odd">{{$last}} {{$index+1}} {{person.name.forename}} {{person.name.surname}} </span><br>
+            <span [class.highlight]="$odd">{{$last}} {{$index+1}} {{person.name.firstname}} {{person.name.lastname}} </span><br>
         } @empty{
          <span>No persons found</span>
         }
         `,
-    styles: ['.highlight {background-color: Lavender }']
+    styles: ['.highlight {background-color: yellow }']
 })
 export class NgForComponent {
      people = [
-            {id: 1, name: {forename: 'John', surname: 'Doe'}},
-            {id: 2, name: {forename: 'John', surname: 'Smith'}},
-            {id: 3, name: {forename: 'Peter', surname: 'Scott'}},
-            {id: 4, name: {forename: 'Sue', surname: 'Reece'}}
+            {id: 1, name: {firstname: 'John', lastname: 'Doe'}},
+            {id: 2, name: {firstname: 'John', lastname: 'Smith'}},
+            {id: 3, name: {firstname: 'Peter', lastname: 'Scott'}},
+            {id: 4, name: {firstname: 'Sue', lastname: 'Reece'}}
         ];
 
      trackByPeople(index: number, person: any) {

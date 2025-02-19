@@ -35,10 +35,10 @@ import { Component } from '@angular/core';
         <hr>
         <h2>In-built Control Flow - If</h2>
         @if(show){
-            If Block - True Condition
+           <b> If Block - True Condition </b>
         }
         @else{
-            Else Block - False Condition
+            <b>Else Block - False Condition</b>
         }        
         `
 })
