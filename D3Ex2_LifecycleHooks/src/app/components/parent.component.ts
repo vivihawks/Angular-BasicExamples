@@ -38,7 +38,7 @@ export class ParentComponent implements OnInit, OnChanges, AfterContentInit, Aft
   6. onDestroy
   
   Advanced
-  1. doCheck
+  1. doCheck(user input event / ajax response / setTimeout / setInterval / Promise / WebWorker)
   2. afterContentChecked(eg. User events on a text box in the content)
   3. afterViewChecked(eg. User events on a text box in the view)
   
