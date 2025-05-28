@@ -26,7 +26,7 @@ export class ChildComponent {
 //@Self()     decorated parameters are to be fulfilled only by the current component
 //@Host()     decorated parameters follow the search from current component to the first grandparent that satisfied the dependency
 //@SkipSelf() decorated parameters follow the @Host() route, except that they don't look at the current component at all, as would the @Host decorated ones
-//@Option()   decorated parameters suppress errors if a dependency could not be satisfied
+//@Optional()   decorated parameters suppress errors if a dependency could not be satisfied
 
 // 1. Comment out the above constructor and alternately
 // uncomment the two following constructors to see the
@@ -46,4 +46,3 @@ export class ChildComponent {
 //     @SkipSelf() @Host() @Optional() public flower ?: FlowerService) { }
 
 }
-
